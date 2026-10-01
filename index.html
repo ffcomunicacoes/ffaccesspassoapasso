@@ -44,6 +44,134 @@ button:disabled{cursor:not-allowed;opacity:.45}
 
 @media(max-width:980px){.page{grid-template-columns:1fr}.walk{grid-template-columns:1fr}.quick{order:2}.viewer{order:3}.admin-layout{grid-template-columns:1fr}.admin-nav{display:flex;gap:7px;border-right:0;border-bottom:1px solid var(--line);overflow:auto}.nav-title{display:none}.admin-tab{min-width:max-content;width:auto}.config-grid,.editor-grid,.step-editor,.visual-editor,.io-grid{grid-template-columns:1fr}.admin-shell{height:95vh}.screen-stage{max-width:340px}.form-grid{grid-template-columns:1fr}}
 @media(max-width:620px){.topbar{align-items:flex-start}.brand p{display:none}.brand h1{font-size:16px}.header-actions{flex-direction:column;align-items:stretch}.header-actions select,.header-actions button{width:150px}.page{padding:0 12px;margin-top:14px}.hero{padding:20px}.ask{grid-template-columns:1fr}.topic-grid{grid-template-columns:1fr}.viewer-head{align-items:flex-start;flex-direction:column}.screen-col{padding:14px}.step-info{padding:22px}.step-info p{font-size:16px}.nav{flex-direction:column-reverse}.overlay{padding:0}.admin-shell{height:100vh;border-radius:0}.admin-body{padding:14px}.coords{grid-template-columns:1fr 1fr}}
+
+
+/* ===== Mobile UX redesign ===== */
+@media (max-width:720px){
+  html{-webkit-text-size-adjust:100%}
+  body{background:#f7f9fc;padding-bottom:env(safe-area-inset-bottom)}
+  button,input,select,textarea{font-size:16px}
+
+  .appbar{position:relative;box-shadow:none}
+  .topbar{padding:12px 14px calc(12px + env(safe-area-inset-top));display:grid;grid-template-columns:1fr;gap:12px}
+  .brand{gap:10px}
+  .logo{width:42px;height:42px;border-radius:12px;font-size:14px}
+  .brand h1{font-size:17px;white-space:normal;line-height:1.15}
+  .brand p{display:block!important;font-size:11px;line-height:1.25;margin-top:3px}
+  .header-actions{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;width:100%}
+  .header-actions select,.header-actions button{width:100%!important;min-width:0;height:46px;padding:0 12px;background:rgba(255,255,255,.13)}
+  .header-actions button{width:auto!important;white-space:nowrap}
+
+  .page{display:flex;flex-direction:column;gap:12px;margin:12px auto 28px;padding:0 10px}
+  .card{border-radius:18px;box-shadow:0 6px 22px rgba(7,19,67,.07)}
+  .hero{padding:18px 16px}
+  .eyebrow{font-size:11px;padding:6px 9px;margin-bottom:9px}
+  .hero h2{font-size:27px;line-height:1.08;margin-bottom:8px}
+  .hero>p{font-size:15px;line-height:1.45}
+  .ask{display:flex;flex-direction:column;gap:8px;margin-top:16px}
+  .ask input{min-height:52px;border-radius:13px;padding:0 14px;font-size:16px}
+  .ask .primary{min-height:50px;width:100%}
+  .hero .hint{font-size:12px}
+
+  .quick{padding:15px}
+  .section-head{align-items:center;margin-bottom:10px}
+  .section-head h3{font-size:18px}
+  .pill{font-size:11px;padding:6px 9px}
+  .topic-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .topic{min-height:96px;padding:12px;border-radius:14px}
+  .topic-icon{width:34px;height:34px;border-radius:10px;font-size:19px}
+  .topic b{font-size:13.5px;line-height:1.25;margin-top:7px}
+  .topic span{font-size:11.5px;line-height:1.3;margin-top:3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+  .viewer{overflow:visible}
+  .viewer-head{padding:15px 16px;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:8px}
+  .viewer-head h3{font-size:17px;line-height:1.25}
+  .viewer-head .hint{font-size:11.5px;margin-top:4px}
+  .walk{display:flex;flex-direction:column;min-height:0}
+  .screen-col{padding:12px;background:#eef2f7}
+  .screen-stage{max-width:330px;border-radius:18px;box-shadow:0 10px 28px rgba(0,0,0,.13)}
+  .empty-screen{min-height:420px;padding:24px;font-size:14px}
+  .spot{border-width:4px;border-radius:12px;box-shadow:0 0 0 9999px rgba(0,0,0,.43),0 0 0 3px rgba(255,255,255,.8)}
+  .badge{left:-14px;top:-14px;width:32px;height:32px;border-width:2px;font-size:14px}
+  .step-info{padding:18px 16px 16px}
+  .counter{font-size:11px;margin-bottom:7px}
+  .step-info h4{font-size:22px;line-height:1.15;margin-bottom:8px}
+  .step-info p{font-size:16px;line-height:1.5;margin:0}
+  .step-progress{height:6px;margin-top:14px}
+  .nav{position:sticky;bottom:0;z-index:5;margin:18px -16px -16px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));gap:8px;background:rgba(255,255,255,.96);border-top:1px solid var(--line);backdrop-filter:blur(10px)}
+  .nav button{min-height:50px;border-radius:12px;font-size:15px}
+
+  /* Admin becomes a true mobile workspace */
+  .overlay{padding:0;align-items:stretch;background:#fff}
+  .login{align-self:center;margin:16px;width:calc(100% - 32px);padding:22px 18px;border-radius:20px}
+  .login h3{font-size:22px}
+  .admin-shell{width:100%;height:100dvh;max-height:none;border-radius:0;box-shadow:none}
+  .admin-head{height:auto;min-height:62px;padding:calc(10px + env(safe-area-inset-top)) 14px 10px}
+  .admin-head b{font-size:16px}.admin-head small{font-size:11px}
+  .close{width:42px;height:42px}
+  .admin-layout{display:grid;grid-template-rows:auto 1fr;grid-template-columns:1fr;min-height:0}
+  .admin-nav{display:flex!important;gap:6px;padding:8px 10px;border-right:0;border-bottom:1px solid var(--line);overflow-x:auto;overflow-y:hidden;scrollbar-width:none;background:#fff;position:sticky;top:0;z-index:3}
+  .admin-nav::-webkit-scrollbar{display:none}
+  .nav-title{display:none}
+  .admin-tab{flex:0 0 auto;width:auto!important;min-width:max-content;min-height:42px;margin:0;padding:9px 12px;border:1px solid #dce3ec;background:#f8fafc}
+  .admin-body{padding:12px 10px 24px;overflow:auto;-webkit-overflow-scrolling:touch}
+  .pane-title{display:flex;flex-direction:column;gap:10px;margin-bottom:12px}
+  .pane-title h3{font-size:20px}.pane-title p{font-size:12px;line-height:1.4}
+  .pane-title>.btn-row{width:100%}
+  .pane-title>.btn-row>*{flex:1}
+  .config-grid,.editor-grid,.step-editor,.visual-editor,.io-grid,.form-grid{grid-template-columns:1fr!important;gap:12px}
+  .panel-box{padding:14px;border-radius:14px}
+  .field{margin-bottom:11px}.field label{font-size:12px}.field input,.field select,.field textarea{min-height:46px;border-radius:11px;padding:11px 12px}
+  .field textarea{min-height:104px}
+  .feature{padding:11px;border-radius:12px}
+  .feature input{width:23px;height:23px}
+  .btn-row{gap:7px}
+  .btn-row>.secondary,.btn-row>.save,.btn-row>.danger,.btn-row>.upload-label{min-height:46px;flex:1 1 145px;justify-content:center;text-align:center}
+
+  .editor-grid{display:flex;flex-direction:column}
+  .tutorial-list{display:flex;gap:8px;overflow-x:auto;overflow-y:hidden;max-height:none;padding:9px;scroll-snap-type:x proximity;scrollbar-width:none}
+  .tutorial-list::-webkit-scrollbar{display:none}
+  .tutorial-list>.btn-row{flex:0 0 auto;align-self:stretch;margin:0!important}
+  .tutorial-list>.btn-row .save{height:100%;min-width:116px}
+  .tutorial-item{flex:0 0 170px;min-height:72px;margin:0;scroll-snap-align:start}
+  .tutorial-item small{white-space:normal;line-height:1.2}
+  .flow-help{font-size:12px;padding:11px 12px;margin:4px 0 12px}
+  .step-editor{border-top:0;padding-top:0}
+  .steps-panel{display:flex;gap:8px;overflow-x:auto;min-height:0;padding:9px;scrollbar-width:none}
+  .steps-panel::-webkit-scrollbar{display:none}
+  .steps-panel>#addStep{flex:0 0 116px!important;width:auto!important;margin:0!important}
+  #stepList{display:flex;gap:8px}
+  .step-pick{flex:0 0 158px;min-height:66px;margin:0}
+  .visual-editor{display:flex;flex-direction:column}
+  .mark-stage{max-width:390px;margin:0 auto;border-radius:14px}
+  .mark-placeholder{min-height:360px;padding:22px;font-size:13px}
+  .coords{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .coords input{min-width:0}
+  .storage-note{font-size:12px;padding:11px 12px}
+  .dropzone{padding:20px 14px}
+  .toast{left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));transform:translateY(140px);text-align:center}
+  .toast.show{transform:translateY(0)}
+}
+
+@media (max-width:380px){
+  .topbar{padding-left:10px;padding-right:10px}
+  .brand h1{font-size:15.5px}
+  .header-actions{grid-template-columns:1fr 48px}
+  .header-actions button{font-size:0;width:48px!important;padding:0}
+  .header-actions button::before{content:'⚙';font-size:20px}
+  .page{padding:0 8px}
+  .hero{padding:16px 14px}.hero h2{font-size:24px}
+  .quick{padding:13px}
+  .topic-grid{gap:7px}
+  .topic{padding:10px;min-height:90px}
+  .topic b{font-size:12.5px}.topic span{font-size:10.8px}
+  .viewer-head{grid-template-columns:1fr}.viewer-head .pill{justify-self:start}
+  .screen-stage{max-width:305px}
+  .step-info{padding:16px 14px}
+  .nav{margin-left:-14px;margin-right:-14px;margin-bottom:-16px;padding-left:14px;padding-right:14px}
+  .nav button{font-size:14px;padding-left:8px;padding-right:8px}
+}
+
 </style>
 </head>
 <body>

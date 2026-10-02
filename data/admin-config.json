@@ -101,7 +101,7 @@
       ],
       "steps": [
         {
-          "img": "assets/uploads/img_1790886601712_g1yu0g.webp",
+          "img": "assets/CADASTRO MORADOR 1.jpeg",
           "x": 3,
           "y": 55.2,
           "w": 46.3,
@@ -111,7 +111,7 @@
           "text": "Na unidade desejada, toque no card “Cadastros”."
         },
         {
-          "img": "assets/uploads/img_1790886736650_0jgisb.webp",
+          "img": "assets/CADASTRO MORADOR 2.jpeg",
           "x": 1.5,
           "y": 12.8,
           "w": 49.7,
@@ -121,7 +121,7 @@
           "text": "No canto esquerdo, toque no card “Moradores”."
         },
         {
-          "img": "assets/uploads/img_1790887589294_nugp6t.webp",
+          "img": "assets/CADASTRO MORADOR 3.jpeg",
           "x": 79.7,
           "y": 78.6,
           "w": 16.9,
@@ -131,7 +131,7 @@
           "text": "No canto inferior direito, clique no botão \"+\""
         },
         {
-          "img": "assets/uploads/img_1790887636138_vnu43z.webp",
+          "img": "assets/CADASTRO MORADOR 4.jpeg",
           "x": 42.3,
           "y": 72,
           "w": 54,
@@ -141,7 +141,7 @@
           "text": "Clique nas opções de cadastros para esta acrescendo um novo cadastro."
         },
         {
-          "img": "assets/uploads/img_1790887737336_z54htc.webp",
+          "img": "assets/CADASTRO MORADOR 5.jpeg",
           "x": 2.1,
           "y": 28.5,
           "w": 96,
@@ -151,7 +151,7 @@
           "text": "Finalize as informações de cadastro, como nome completo, e-mail, celular etc."
         },
         {
-          "img": "assets/uploads/img_1790888259138_b6dr20.webp",
+          "img": "assets/CADASTRO MORADOR 5.jpeg",
           "x": 34,
           "y": 13.5,
           "w": 32.8,
@@ -161,7 +161,7 @@
           "text": "Descreva o que o usuário deve fazer."
         },
         {
-          "img": "assets/uploads/img_1790887812834_1kxzls.webp",
+          "img": "assets/CADASTRO MORADOR 5.jpeg",
           "x": 75.1,
           "y": 5.6,
           "w": 23.3,
@@ -511,6 +511,6 @@
     "folder": "assets"
   },
   "meta": {
-    "updatedAt": 1790951511566
+    "updatedAt": 1790951625015
   }
 }

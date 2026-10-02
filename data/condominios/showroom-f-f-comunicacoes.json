@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": 1790978926163,
+  "updatedAt": 1790979040007,
   "condominio": "Showroom F&F Comunicações",
   "features": {
     "moradores": {
@@ -232,7 +232,7 @@
           "h": 7.5,
           "highlight": true,
           "title": "Clique no botão \"Convite\"",
-          "text": "Clique no botão convite e  escolha a opção de envio."
+          "text": "Clique no botão convite e  escolha a opção de \"Convite\"."
         },
         {
           "img": "assets/Convites 2.jpeg",
@@ -241,8 +241,8 @@
           "w": 97.9,
           "h": 18.5,
           "highlight": true,
-          "title": "Digite as informações básicas do sistema.",
-          "text": "Informe o nome completo, celular, facial, unidade e horario de inicio e fim do acesso."
+          "title": "Escolha a opção de envio.",
+          "text": "O convite pode ser por \"e-mail\" ou  por \"SMS\". Escolha uma opção."
         },
         {
           "img": "assets/Convites 2.jpeg",

@@ -6,7 +6,7 @@
   "features": {
     "moradores": {
       "icon": "👥",
-      "label": "Ver Editar moradores",
+      "label": "Editar moradores",
       "desc": "Consultar moradores vinculados à unidade."
     },
     "cadastrar": {
@@ -639,6 +639,6 @@
     "folder": "assets"
   },
   "meta": {
-    "updatedAt": 1790974573833
+    "updatedAt": 1790974761981
   }
 }

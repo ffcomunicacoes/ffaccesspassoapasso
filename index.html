@@ -44,7 +44,7 @@ button:disabled{cursor:not-allowed;opacity:.45}
 
 
 .locked-condo{min-height:44px;display:inline-flex;align-items:center;padding:0 13px;border:1px solid rgba(255,255,255,.22);border-radius:12px;background:rgba(255,255,255,.10);font-weight:800}
-body.public-condo #adminBtn,body.public-condo #condoSelect{display:none!important}body.public-condo .locked-condo{display:inline-flex!important}body.public-condo .brand p{display:none}body.public-condo .hero .hint{display:none}
+body.public-condo #adminBtn,body.public-condo #condoSelect{display:none!important}body.public-condo #refreshPublic{display:inline-flex!important;align-items:center;justify-content:center}body.public-condo .locked-condo{display:inline-flex!important}body.public-condo .brand p{display:none}body.public-condo .hero .hint{display:none}
 .public-links{display:grid;gap:10px}.public-link-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:8px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:12px;background:var(--surface-2)}.public-link-row input{min-width:0;border:1px solid #d4dce8;border-radius:10px;padding:10px;background:#fff;color:#42506a}
 .github-picker{margin-top:14px;border:1px solid #d7e1ef;border-radius:16px;padding:14px;background:#f8fbff}.github-config{display:grid;grid-template-columns:1fr 1fr 130px 1fr auto;gap:9px;align-items:end}.github-config .field{margin:0}.github-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:12px;max-height:420px;overflow:auto}.gh-img{border:1px solid #dbe3ee;border-radius:12px;background:#fff;padding:8px;text-align:left;min-width:0}.gh-img img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;background:#eef2f7;display:block}.gh-img b{display:block;margin-top:7px;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.gh-img small{display:block;color:var(--muted);font-size:10px;margin-top:2px}.github-note{font-size:12px;color:var(--muted);line-height:1.45;margin-top:8px}
 
@@ -77,7 +77,7 @@ body.public-condo #adminBtn,body.public-condo #condoSelect{display:none!importan
   .brand p{display:block!important;font-size:11px;line-height:1.25;margin-top:3px}
   .header-actions{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;width:100%}
   .header-actions select,.header-actions button{width:100%!important;min-width:0;height:46px;padding:0 12px;background:rgba(255,255,255,.13)}
-  .header-actions button{width:auto!important;white-space:nowrap}
+  .header-actions button{width:auto!important;white-space:nowrap}body.public-condo .header-actions{grid-template-columns:minmax(0,1fr) auto}body.public-condo .locked-condo{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
   .page{display:flex;flex-direction:column;gap:12px;margin:12px auto 28px;padding:0 10px}
   .card{border-radius:18px;box-shadow:0 6px 22px rgba(7,19,67,.07)}
@@ -195,7 +195,7 @@ body.public-condo #adminBtn,body.public-condo #condoSelect{display:none!importan
 <header class="appbar">
   <div class="topbar">
     <div class="brand"><div class="logo">F&F</div><div><h1>Central de Ajuda F&F Access</h1><p>Passo a passo ilustrado do Condfy</p></div></div>
-    <div class="header-actions"><select id="condoSelect" aria-label="Selecionar condomínio"></select><span class="locked-condo" id="lockedCondoName" hidden></span><button id="adminBtn" type="button">⚙ Administrador</button></div>
+    <div class="header-actions"><select id="condoSelect" aria-label="Selecionar condomínio"></select><span class="locked-condo" id="lockedCondoName" hidden></span><button id="refreshPublic" type="button" hidden>↻ Atualizar</button><button id="adminBtn" type="button">⚙ Administrador</button></div>
   </div>
 </header>
 
@@ -331,14 +331,14 @@ Object.keys(SEED_FEATURES).forEach(k=>{DEFAULT.condos['Showroom F&F Comunicaçõ
 
 const $=id=>document.getElementById(id);
 const esc=(s='')=>String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
-const STORAGE_KEY='ffaccess_help_v7';
+const STORAGE_KEY='ffaccess_help_v8';
 let state=loadState();
 let currentTutorial=null,stepIndex=0,editKey=null,editStep=0,drawing=false,drawStart=null;
 let currentPublicUrl=null,currentEditorUrl=null;
 let lockedCondo=null;
 
 function migrate(s){if(!s)return clone(DEFAULT);s.meta=s.meta||{updatedAt:0};s.admin=s.admin||clone(DEFAULT.admin);if(s.admin.pass&&!s.admin.passHash){s.admin.passHash=null}s.github={...clone(DEFAULT.github),...(s.github||{})};s.features=s.features||clone(SEED_FEATURES);s.tutorials=s.tutorials||clone(SEED_TUTORIALS);s.condos=s.condos||clone(DEFAULT.condos);for(const c of Object.keys(s.condos))for(const k of Object.keys(s.features))if(typeof s.condos[c][k]!=='boolean')s.condos[c][k]=true;return s}
-function loadState(){try{const raw=localStorage.getItem(STORAGE_KEY)||localStorage.getItem('ffaccess_help_v6')||localStorage.getItem('ffaccess_help_v5');return raw?migrate(JSON.parse(raw)):clone(DEFAULT)}catch{return clone(DEFAULT)}}
+function loadState(){try{const raw=localStorage.getItem(STORAGE_KEY)||localStorage.getItem('ffaccess_help_v7')||localStorage.getItem('ffaccess_help_v6')||localStorage.getItem('ffaccess_help_v5');return raw?migrate(JSON.parse(raw)):clone(DEFAULT)}catch{return clone(DEFAULT)}}
 function persist(touch=true){if(touch){state.meta=state.meta||{};state.meta.updatedAt=Date.now()}localStorage.setItem(STORAGE_KEY,JSON.stringify(state))}
 function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>$('toast').classList.remove('show'),2300)}
 function condo(){return lockedCondo||$('condoSelect').value||Object.keys(state.condos)[0]}
@@ -362,11 +362,14 @@ function publicPackageForCondo(name){const keys=Object.keys(state.features).filt
 async function publishLocalImages(){for(const [key,t] of Object.entries(state.tutorials)){for(const step of t.steps||[]){const id=imageId(step.img);if(!id)continue;const blob=await imageGet(id);if(!blob)continue;const ext=blob.type==='image/png'?'png':blob.type==='image/jpeg'?'jpg':'webp';const path=`assets/uploads/${id}.${ext}`;await ghPutFile(path,await blobToBase64(blob),`Atualiza imagem do tutorial ${state.features[key]?.label||key}`);step.img=path}}}
 let publishing=false;
 function setSyncStatus(kind,title,text){const dot=$('syncDot');if(!dot)return;dot.className='sync-dot'+(kind?' '+kind:'');$('syncTitle').textContent=title;$('syncText').textContent=text}
-async function publishAll(reason='Atualiza central de ajuda'){if(publishing)return false;const cfg=cloudBase();if(!cfg.owner||!cfg.repo||!githubToken()){setSyncStatus('warn','Publicação não conectada','Configure o repositório e informe o token para sincronizar todos os celulares.');return false}publishing=true;document.querySelectorAll('.save').forEach(b=>b.classList.add('publishing'));setSyncStatus('warn','Publicando...','Enviando alterações e imagens para o GitHub.');try{persist(true);await publishLocalImages();persist(false);const adminState=clone(state);await ghPutFile('data/admin-config.json',utf8ToBase64(JSON.stringify(adminState,null,2)),reason);for(const name of Object.keys(state.condos)){const pkg=publicPackageForCondo(name);await ghPutFile(`data/condominios/${slugify(name)}.json`,utf8ToBase64(JSON.stringify(pkg,null,2)),`${reason} - ${name}`)}setSyncStatus('ok','Publicado com sucesso','As configurações foram gravadas no GitHub. Os links públicos leem o arquivo publicado diretamente do repositório.');toast('Publicado no GitHub para todos os aparelhos.');return true}catch(err){console.error(err);setSyncStatus('err','Falha na publicação',err.message||'Não foi possível publicar.');toast('ATENÇÃO: ficou salvo só neste computador. Corrija a conexão do GitHub e publique novamente.');return false}finally{publishing=false;document.querySelectorAll('.save').forEach(b=>b.classList.remove('publishing'))}}
+async function publishAll(reason='Atualiza central de ajuda'){if(publishing)return false;const cfg=cloudBase();if(!cfg.owner||!cfg.repo||!githubToken()){setSyncStatus('warn','Publicação não conectada','Configure o repositório e informe o token para sincronizar todos os celulares.');return false}publishing=true;document.querySelectorAll('.save').forEach(b=>b.classList.add('publishing'));setSyncStatus('warn','Publicando...','Enviando alterações e imagens para o GitHub.');try{persist(true);await publishLocalImages();persist(false);const adminState=clone(state);if(adminState.admin){delete adminState.admin.pass;if(!adminState.admin.passHash)adminState.admin.passHash=''}await ghPutFile('data/admin-config.json',utf8ToBase64(JSON.stringify(adminState,null,2)),reason);for(const name of Object.keys(state.condos)){const pkg=publicPackageForCondo(name);await ghPutFile(`data/condominios/${slugify(name)}.json`,utf8ToBase64(JSON.stringify(pkg,null,2)),`${reason} - ${name}`)}setSyncStatus('ok','Publicado com sucesso','As configurações foram gravadas no GitHub. Os links públicos leem o arquivo publicado diretamente do repositório.');toast('Publicado no GitHub para todos os aparelhos.');return true}catch(err){console.error(err);setSyncStatus('err','Falha na publicação',err.message||'Não foi possível publicar.');toast('ATENÇÃO: ficou salvo só neste computador. Corrija a conexão do GitHub e publique novamente.');return false}finally{publishing=false;document.querySelectorAll('.save').forEach(b=>b.classList.remove('publishing'))}}
 async function fetchJsonNoCache(path){const sep=path.includes('?')?'&':'?';const r=await fetch(path+sep+'v='+Date.now(),{cache:'no-store',headers:{'Cache-Control':'no-cache','Pragma':'no-cache'}});if(!r.ok)throw new Error(String(r.status));return r.json()}
 function rawGithubUrl(path){const d=detectGithub();if(!d)return null;const branch=(state.github?.branch||'main').trim()||'main';const clean=String(path||'').replace(/^\/+/, '');return `https://raw.githubusercontent.com/${encodeURIComponent(d.owner)}/${encodeURIComponent(d.repo)}/${encodeURIComponent(branch)}/${clean}` }
-async function fetchPublishedJson(path){const raw=rawGithubUrl(path);if(raw){try{return await fetchJsonNoCache(raw)}catch(e){console.warn('Falha no RAW do GitHub, tentando GitHub Pages',e)}}return fetchJsonNoCache(path)}
+async function fetchPublishedJson(path){const raw=rawGithubUrl(path);let lastErr=null;for(const url of [raw,path].filter(Boolean)){for(let attempt=0;attempt<2;attempt++){try{return await fetchJsonNoCache(url)}catch(e){lastErr=e;if(attempt===0)await new Promise(r=>setTimeout(r,350))}}}throw lastErr||new Error('Não foi possível carregar o conteúdo publicado.')}
 async function loadPublicPackage(slug){return fetchPublishedJson(`data/condominios/${encodeURIComponent(slug)}.json`)}
+function publicCacheKey(slug){return 'ffaccess_public_cache_'+slug}
+function cachePublicPackage(slug,pkg){try{localStorage.setItem(publicCacheKey(slug),JSON.stringify(pkg))}catch{}}
+function getCachedPublicPackage(slug){try{return JSON.parse(localStorage.getItem(publicCacheKey(slug))||'null')}catch{return null}}
 async function loadRemoteAdmin(){try{return migrate(await fetchPublishedJson('data/admin-config.json'))}catch{return null}}
 
 
@@ -405,8 +408,8 @@ document.querySelectorAll('.admin-tab').forEach(btn=>btn.addEventListener('click
 function renderAdminFeatures(){const c=$('adminCondo').value;$('featureList').innerHTML=Object.entries(state.features).map(([k,f])=>`<label class="feature"><input type="checkbox" data-key="${esc(k)}" ${enabled(k,c)?'checked':''}><div><b>${esc(f.icon)} ${esc(f.label)}</b><small>${esc(f.desc)}</small></div></label>`).join('')}
 $('adminCondo').addEventListener('change',renderAdminFeatures);
 $('saveFeatures').addEventListener('click',async()=>{const c=$('adminCondo').value;document.querySelectorAll('#featureList input[type=checkbox]').forEach(ch=>state.condos[c][ch.dataset.key]=ch.checked);persist();$('condoSelect').value=c;renderTopics();showWelcome();const ok=await publishAll('Atualiza opções do condomínio');if(!ok)toast('Opções salvas apenas neste navegador. Configure Publicação.')});
-$('addCondo').addEventListener('click',()=>{const n=$('newCondo').value.trim();if(!n)return toast('Digite o nome do condomínio.');if(state.condos[n])return toast('Esse condomínio já existe.');state.condos[n]={};Object.keys(state.features).forEach(k=>state.condos[n][k]=true);persist();renderCondoSelects();$('adminCondo').value=n;renderAdminFeatures();$('newCondo').value='';renderPublicLinks();toast('Condomínio adicionado.')});
-$('changeAdmin').addEventListener('click',()=>{const u=$('newAdminUser').value.trim(),p=$('newAdminPass').value;if(!u||p.length<4)return toast('Informe usuário e senha com pelo menos 4 caracteres.');state.admin={user:u,pass:p};persist();$('adminUser').value=u;$('newAdminUser').value='';$('newAdminPass').value='';toast('Credencial administrativa alterada.')});
+$('addCondo').addEventListener('click',async()=>{const n=$('newCondo').value.trim();if(!n)return toast('Digite o nome do condomínio.');if(state.condos[n])return toast('Esse condomínio já existe.');const slug=slugify(n);if(Object.keys(state.condos).some(c=>slugify(c)===slug))return toast('Já existe um condomínio com um nome muito parecido. Use um nome diferente.');state.condos[n]={};Object.keys(state.features).forEach(k=>state.condos[n][k]=true);persist();renderCondoSelects();$('adminCondo').value=n;renderAdminFeatures();$('newCondo').value='';renderPublicLinks();const ok=await publishAll('Adiciona condomínio '+n);toast(ok?'Condomínio criado e publicado.':'Condomínio criado somente neste navegador. Configure Publicação.')});
+$('changeAdmin').addEventListener('click',async()=>{const u=$('newAdminUser').value.trim(),p=$('newAdminPass').value;if(!u||p.length<4)return toast('Informe usuário e senha com pelo menos 4 caracteres.');state.admin={user:u,passHash:await sha256(p)};persist();$('adminUser').value=u;$('newAdminUser').value='';$('newAdminPass').value='';const ok=await publishAll('Atualiza credencial administrativa');toast(ok?'Credencial alterada e publicada.':'Credencial alterada somente neste navegador. Configure Publicação.')});
 
 /* Tutorial editor */
 function renderTutorialList(){const keys=Object.keys(state.features);if(!editKey||!state.features[editKey])editKey=keys[0]||null;if(!editKey){$('tutorialList').innerHTML='<div class="hint">Nenhum menu criado.</div>';clearEditor();return}$('tutorialList').innerHTML=keys.map(k=>`<button class="tutorial-item ${k===editKey?'active':''}" type="button" data-key="${esc(k)}"><b>${esc(state.features[k].icon)} ${esc(state.features[k].label)}</b><small>${state.tutorials[k]?.steps?.length||0} etapas</small></button>`).join('');document.querySelectorAll('.tutorial-item').forEach(b=>b.addEventListener('click',()=>{saveStepFields();editKey=b.dataset.key;editStep=0;renderTutorialList()}));loadEditor()}
@@ -418,7 +421,7 @@ function saveStepFields(){const s=state.tutorials[editKey]?.steps?.[editStep];if
 async function saveTutorialFields(){if(!editKey)return;const label=$('edLabel').value.trim();if(!label)return toast('Informe o nome do menu.');state.features[editKey].label=label;state.features[editKey].icon=$('edIcon').value.trim()||'📌';state.features[editKey].desc=$('edDesc').value.trim();state.tutorials[editKey].title=$('edTitle').value.trim()||('Como usar '+label+'?');state.tutorials[editKey].keywords=$('edKeywords').value.split(',').map(x=>x.trim()).filter(Boolean);saveStepFields();persist();renderTopics();renderAdminFeatures();renderTutorialList();const ok=await publishAll('Atualiza tutorial');if(!ok)toast('Tutorial salvo apenas neste navegador. Configure Publicação.')}
 $('saveTutorial').addEventListener('click',saveTutorialFields);
 $('newTutorial').addEventListener('click',()=>{saveStepFields();const key='menu_'+Date.now();state.features[key]={icon:'📌',label:'Novo menu',desc:'Nova função do sistema.'};state.tutorials[key]={title:'Como usar este menu?',keywords:['novo menu'],steps:[]};for(const c of Object.keys(state.condos))state.condos[c][key]=(c===$('adminCondo').value);editKey=key;editStep=0;persist();renderTutorialList();renderAdminFeatures();toast('Novo menu criado. Adicione as etapas e os prints.')});
-$('deleteTutorial').addEventListener('click',async()=>{if(!editKey||!confirm('Excluir este menu e todas as etapas?'))return;for(const s of state.tutorials[editKey]?.steps||[]){const id=imageId(s.img);if(id)await imageDelete(id)}delete state.features[editKey];delete state.tutorials[editKey];for(const c of Object.keys(state.condos))delete state.condos[c][editKey];editKey=null;persist();renderTutorialList();renderAdminFeatures();renderTopics();toast('Menu excluído.')});
+$('deleteTutorial').addEventListener('click',async()=>{if(!editKey||!confirm('Excluir este menu e todas as etapas?'))return;for(const s of state.tutorials[editKey]?.steps||[]){const id=imageId(s.img);if(id)await imageDelete(id)}delete state.features[editKey];delete state.tutorials[editKey];for(const c of Object.keys(state.condos))delete state.condos[c][editKey];editKey=null;persist();renderTutorialList();renderAdminFeatures();renderTopics();const ok=await publishAll('Exclui menu do manual');toast(ok?'Menu excluído e publicado.':'Menu excluído somente neste navegador. Configure Publicação.')});
 $('addStep').addEventListener('click',()=>{if(!editKey)return;saveStepFields();state.tutorials[editKey].steps.push({img:'',x:10,y:10,w:30,h:10,highlight:true,title:'Nova etapa',text:'Descreva o que o usuário deve fazer.'});editStep=state.tutorials[editKey].steps.length-1;persist();renderStepList();loadStepForm()});
 $('deleteStep').addEventListener('click',async()=>{const a=state.tutorials[editKey]?.steps;if(!a?.length||!confirm('Excluir esta etapa?'))return;const old=a[editStep];const id=imageId(old?.img);if(id)await imageDelete(id);a.splice(editStep,1);editStep=Math.max(0,Math.min(editStep,a.length-1));persist();renderStepList();loadStepForm();toast('Etapa excluída.')});
 $('stepUp').addEventListener('click',()=>moveStep(-1));$('stepDown').addEventListener('click',()=>moveStep(1));
@@ -431,16 +434,16 @@ async function fetchGithubFolder(owner,repo,branch,path,depth=0){const api=`http
 async function loadGithubImages(){const owner=$('ghOwner').value.trim(),repo=$('ghRepo').value.trim(),branch=$('ghBranch').value.trim()||'main',folder=$('ghFolder').value.trim().replace(/^\/+|\/+$/g,'')||'assets';if(!owner||!repo)return toast('Informe o usuário e o repositório do GitHub.');state.github={owner,repo,branch,folder};persist();const gallery=$('githubGallery');gallery.innerHTML='<div class="hint">Carregando imagens do GitHub...</div>';try{const imgs=await fetchGithubFolder(owner,repo,branch,folder);if(!imgs.length){gallery.innerHTML='<div class="hint">Nenhuma imagem encontrada nesta pasta.</div>';return}gallery.innerHTML=imgs.map((im,i)=>`<button class="gh-img" type="button" data-i="${i}"><img loading="lazy" src="${esc(im.url)}" alt="${esc(im.name)}"><b>${esc(im.name)}</b><small>${esc(im.path)}</small></button>`).join('');gallery.querySelectorAll('.gh-img').forEach(b=>b.addEventListener('click',async()=>{const step=state.tutorials[editKey]?.steps?.[editStep];if(!step)return;const im=imgs[+b.dataset.i];const detected=detectGithub();const sameRepo=detected&&detected.owner.toLowerCase()===owner.toLowerCase()&&detected.repo.toLowerCase()===repo.toLowerCase();step.img=sameRepo?im.path:im.url;step.highlight=true;persist();await loadStepForm();$('githubPicker').hidden=true;toast('Imagem do GitHub selecionada.')}))}catch(err){console.error(err);gallery.innerHTML='<div class="hint">Não foi possível listar as imagens. Confira repositório, branch e pasta. O repositório precisa ser público.</div>';toast('Erro ao carregar imagens do GitHub.')}}
 $('chooseGithub').addEventListener('click',()=>{$('githubPicker').hidden=false;loadGithubSettings();if(!$('githubGallery').children.length)loadGithubImages()});$('closeGithubPicker').addEventListener('click',()=>{$('githubPicker').hidden=true});$('loadGithubImages').addEventListener('click',loadGithubImages);
 /* New image upload: stores Blob in IndexedDB, supports many screenshots */
-$('imageUpload').addEventListener('change',async e=>{const file=e.target.files?.[0];e.target.value='';if(!file)return;if(!['image/jpeg','image/png','image/webp'].includes(file.type))return toast('Use uma imagem JPG, PNG ou WEBP.');if(file.size>18*1024*1024)return toast('A imagem é muito grande. Use um arquivo de até 18 MB.');const step=state.tutorials[editKey]?.steps?.[editStep];if(!step)return;try{const blob=await optimizeImage(file);const oldId=imageId(step.img);if(oldId)await imageDelete(oldId);const id='img_'+Date.now()+'_'+Math.random().toString(36).slice(2,8);await imagePut(id,blob);step.img='idb:'+id;step.highlight=true;persist();await loadStepForm();toast('Print salvo. Agora marque a área do clique.')}catch(err){console.error(err);toast('Não foi possível salvar a imagem neste navegador.')}});
+$('imageUpload').addEventListener('change',async e=>{const file=e.target.files?.[0];e.target.value='';if(!file)return;if(!['image/jpeg','image/png','image/webp'].includes(file.type))return toast('Use uma imagem JPG, PNG ou WEBP.');if(file.size>18*1024*1024)return toast('A imagem é muito grande. Use um arquivo de até 18 MB.');const step=state.tutorials[editKey]?.steps?.[editStep];if(!step)return;try{const blob=await optimizeImage(file);const oldId=imageId(step.img);if(oldId)await imageDelete(oldId);const id='img_'+Date.now()+'_'+Math.random().toString(36).slice(2,8);await imagePut(id,blob);step.img='idb:'+id;step.highlight=true;persist();await loadStepForm();toast('Print adicionado. Marque a área e depois clique em Salvar e publicar.')}catch(err){console.error(err);toast('Não foi possível salvar a imagem neste navegador.')}});
 function optimizeImage(file){return new Promise((resolve,reject)=>{const reader=new FileReader();reader.onerror=()=>reject(reader.error);reader.onload=()=>{const img=new Image();img.onerror=()=>reject(new Error('Imagem inválida'));img.onload=()=>{const maxW=1600,maxH=2600,scale=Math.min(1,maxW/img.width,maxH/img.height);const c=document.createElement('canvas');c.width=Math.max(1,Math.round(img.width*scale));c.height=Math.max(1,Math.round(img.height*scale));const ctx=c.getContext('2d');ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.drawImage(img,0,0,c.width,c.height);c.toBlob(blob=>blob?resolve(blob):reject(new Error('Falha ao converter imagem')),'image/webp',.82)};img.src=reader.result};reader.readAsDataURL(file)})}
 function renderEditSpot(){const s=state.tutorials[editKey]?.steps?.[editStep],sp=$('editSpot');if(!s||s.highlight===false||$('markImage').hidden){sp.hidden=true;return}const x=clamp(s.x),y=clamp(s.y),w=Math.max(1,Math.min(100-x,clamp(s.w,1,100))),h=Math.max(1,Math.min(100-y,clamp(s.h,1,100)));sp.style.left=x+'%';sp.style.top=y+'%';sp.style.width=w+'%';sp.style.height=h+'%';sp.hidden=false}
 for(const id of ['cx','cy','cw','ch'])$(id).addEventListener('input',()=>{saveStepFields();const s=state.tutorials[editKey]?.steps?.[editStep];if(s)s.highlight=true;renderEditSpot()});
-$('clearArea').addEventListener('click',()=>{const s=state.tutorials[editKey]?.steps?.[editStep];if(!s)return;s.highlight=false;persist();$('editSpot').hidden=true;toast('Destaque removido desta etapa.')});
+$('clearArea').addEventListener('click',()=>{const s=state.tutorials[editKey]?.steps?.[editStep];if(!s)return;s.highlight=false;persist();$('editSpot').hidden=true;toast('Destaque removido. Clique em Salvar e publicar para atualizar os aparelhos.')});
 $('drawArea').addEventListener('click',()=>{const s=state.tutorials[editKey]?.steps?.[editStep];if(!s?.img)return toast('Primeiro adicione um print.');drawing=true;$('markStage').classList.add('drawing');toast('Arraste sobre o botão que deseja destacar.')});
 function stagePoint(ev){const r=$('markImage').getBoundingClientRect();return{x:clamp((ev.clientX-r.left)/r.width*100),y:clamp((ev.clientY-r.top)/r.height*100)}}
 $('markStage').addEventListener('pointerdown',e=>{if(!drawing||$('markImage').hidden)return;drawStart=stagePoint(e);e.currentTarget.setPointerCapture(e.pointerId)});
 $('markStage').addEventListener('pointermove',e=>{if(!drawing||!drawStart)return;const p=stagePoint(e),s=state.tutorials[editKey].steps[editStep];s.highlight=true;s.x=Math.min(drawStart.x,p.x);s.y=Math.min(drawStart.y,p.y);s.w=Math.max(1,Math.abs(p.x-drawStart.x));s.h=Math.max(1,Math.abs(p.y-drawStart.y));$('cx').value=num(s.x);$('cy').value=num(s.y);$('cw').value=num(s.w);$('ch').value=num(s.h);renderEditSpot()});
-$('markStage').addEventListener('pointerup',()=>{if(!drawing)return;drawing=false;drawStart=null;$('markStage').classList.remove('drawing');saveStepFields();persist();toast('Área marcada e salva.')});
+$('markStage').addEventListener('pointerup',()=>{if(!drawing)return;drawing=false;drawStart=null;$('markStage').classList.remove('drawing');saveStepFields();persist();toast('Área marcada. Clique em Salvar e publicar para atualizar os aparelhos.')});
 
 
 /* GitHub publishing settings */
@@ -456,30 +459,40 @@ $('exportBackup').addEventListener('click',async()=>{const pack={version:1,creat
 $('importBackup').addEventListener('change',async e=>{const file=e.target.files?.[0];e.target.value='';if(!file)return;try{const pack=JSON.parse(await file.text());if(!pack?.state||typeof pack.state!=='object')throw new Error('Backup inválido');await imageClear();for(const [id,data] of Object.entries(pack.images||{}))await imagePut(id,dataURLToBlob(data));state=migrate(pack.state);persist();currentTutorial=null;editKey=null;renderCondoSelects();renderTopics();renderAdminFeatures();renderTutorialList();showPublicEmpty('Backup importado. Escolha um tutorial.');toast('Backup restaurado com sucesso.')}catch(err){console.error(err);toast('Não foi possível importar este backup.')}});
 $('resetData').addEventListener('click',async()=>{if(!confirm('Restaurar todos os dados iniciais e apagar as imagens adicionadas neste navegador?'))return;await imageClear();state=clone(DEFAULT);persist();currentTutorial=null;editKey=null;renderCondoSelects();renderTopics();renderAdminFeatures();renderTutorialList();showPublicEmpty('Escolha um tutorial para visualizar cada clique na tela.');toast('Dados iniciais restaurados.')});
 
+function applyPublicPackage(pkg,{cached=false}={}){
+  if(!pkg?.condominio||!pkg.features||!pkg.tutorials)throw new Error('Pacote público inválido');
+  lockedCondo=pkg.condominio;
+  state=migrate({meta:{updatedAt:pkg.updatedAt||0},admin:clone(DEFAULT.admin),github:clone(DEFAULT.github),features:pkg.features,tutorials:pkg.tutorials,condos:{[pkg.condominio]:Object.fromEntries(Object.keys(pkg.features).map(k=>[k,true]))}});
+  renderCondoSelects();renderTopics();showWelcome();
+  let el=document.getElementById('publicUpdatedInfo');
+  if(!el){el=document.createElement('div');el.id='publicUpdatedInfo';el.className='public-updated';document.querySelector('.hero')?.appendChild(el)}
+  if(pkg.updatedAt){const d=new Date(pkg.updatedAt);el.textContent=(cached?'Última versão salva no aparelho • ':'Conteúdo atualizado em ')+d.toLocaleString('pt-BR')}else el.textContent=cached?'Exibindo última versão salva neste aparelho':'';
+}
+
+async function refreshPublicPackage({silent=false}={}){
+  const slug=new URLSearchParams(location.search).get('condominio');
+  if(!slug)return false;
+  const btn=$('refreshPublic');if(btn){btn.disabled=true;btn.textContent='Atualizando…'}
+  try{
+    const pkg=await loadPublicPackage(slug);cachePublicPackage(slug,pkg);applyPublicPackage(pkg);if(!silent)toast('Conteúdo atualizado.');return true;
+  }catch(e){
+    console.error(e);const cached=getCachedPublicPackage(slug);if(cached){applyPublicPackage(cached,{cached:true});if(!silent)toast('Sem conexão com a versão nova. Exibindo a última versão salva.');return false}
+    document.querySelector('.page').innerHTML='<section class="card hero"><h2>Link ainda não publicado</h2><p>Não foi possível carregar este condomínio. Confirme a publicação no GitHub e tente novamente.</p></section>';$('lockedCondoName').hidden=true;return false;
+  }finally{if(btn){btn.disabled=false;btn.textContent='↻ Atualizar'}}
+}
+
 async function bootstrap(){
   const condoParam=new URLSearchParams(location.search).get('condominio');
   if(condoParam){
-    document.body.classList.add('public-condo');
-    $('adminBtn').hidden=true;
-    $('condoSelect').hidden=true;
-    try{
-      const pkg=await loadPublicPackage(condoParam);
-      if(!pkg?.condominio||!pkg.features||!pkg.tutorials)throw new Error('Pacote inválido');
-      lockedCondo=pkg.condominio;
-      state=migrate({meta:{updatedAt:pkg.updatedAt||0},admin:clone(DEFAULT.admin),github:clone(DEFAULT.github),features:pkg.features,tutorials:pkg.tutorials,condos:{[pkg.condominio]:Object.fromEntries(Object.keys(pkg.features).map(k=>[k,true]))}});
-      renderCondoSelects();renderTopics();showWelcome();
-      const hero=document.querySelector('.hero');if(hero&&pkg.updatedAt){const d=new Date(pkg.updatedAt);const el=document.createElement('div');el.className='public-updated';el.textContent='Conteúdo atualizado em '+d.toLocaleString('pt-BR');hero.appendChild(el)}
-    }catch(e){
-      console.error(e);
-      document.querySelector('.page').innerHTML='<section class="card hero"><h2>Link ainda não publicado</h2><p>Este condomínio ainda não possui uma versão publicada. Solicite ao administrador que clique em <b>Salvar e publicar</b>.</p></section>';
-      $('lockedCondoName').hidden=true;
-    }
-    return;
+    document.body.classList.add('public-condo');$('adminBtn').hidden=true;$('condoSelect').hidden=true;$('refreshPublic').hidden=false;
+    await refreshPublicPackage({silent:true});return;
   }
   const remote=await loadRemoteAdmin();
   if(remote && (remote.meta?.updatedAt||0) >= (state.meta?.updatedAt||0)){state=remote;persist(false)}
   renderCondoSelects();renderTopics();renderPublicLinks();showWelcome();loadSyncUI();
 }
+$('refreshPublic').addEventListener('click',()=>refreshPublicPackage());
+let lastPublicRefresh=0;document.addEventListener('visibilitychange',()=>{if(!document.hidden&&document.body.classList.contains('public-condo')&&Date.now()-lastPublicRefresh>30000){lastPublicRefresh=Date.now();refreshPublicPackage({silent:true})}});window.addEventListener('pageshow',()=>{if(document.body.classList.contains('public-condo')){lastPublicRefresh=Date.now();refreshPublicPackage({silent:true})}});
 bootstrap();
 </script>
 </body>

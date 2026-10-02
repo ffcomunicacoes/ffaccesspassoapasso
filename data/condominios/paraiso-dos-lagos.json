@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": 1790969666158,
+  "updatedAt": 1790970621528,
   "condominio": "Paraíso dos Lagos",
   "features": {
     "moradores": {
@@ -134,14 +134,24 @@
           "text": "Clique no botão convite e  escolha a opção de envio."
         },
         {
-          "img": "",
-          "x": 10,
-          "y": 10,
-          "w": 30,
-          "h": 10,
+          "img": "assets/Reconhecimento facial.jpeg",
+          "x": 2.4,
+          "y": 11.6,
+          "w": 96.9,
+          "h": 52.3,
           "highlight": true,
-          "title": "Nova etapa",
-          "text": "Descreva o que o usuário deve fazer."
+          "title": "Digite as informações básicas do sistema.",
+          "text": "Informe o nome completo, celular, facial, unidade e horario de inicio e fim do acesso."
+        },
+        {
+          "img": "assets/Reconhecimento facial.jpeg",
+          "x": 2.4,
+          "y": 71,
+          "w": 95.4,
+          "h": 6.6,
+          "highlight": true,
+          "title": "Clique em \"Salvar\"",
+          "text": "Clique em salvar para esta criando o acesso temporario da face."
         }
       ]
     },

@@ -58,6 +58,11 @@
       "icon": "📁",
       "label": "Documentos da unidade",
       "desc": "Consultar documentos vinculados à unidade."
+    },
+    "menu_1790974025392": {
+      "icon": "🫂",
+      "label": "Cadastro de visitantes",
+      "desc": "Nova função do sistema."
     }
   },
   "tutorials": {
@@ -534,6 +539,67 @@
           "text": "Para organizar os arquivos, toque em “Criar Pasta”."
         }
       ]
+    },
+    "menu_1790974025392": {
+      "title": "Como cadastrar um visitante?",
+      "keywords": [
+        "Visitante",
+        "temporário",
+        "amigos",
+        "temporada"
+      ],
+      "steps": [
+        {
+          "img": "assets/CADASTRO MORADOR 1.jpeg",
+          "x": 1.8,
+          "y": 55.2,
+          "w": 47.9,
+          "h": 10.6,
+          "highlight": true,
+          "title": "Nova etapa",
+          "text": "Descreva o que o usuário deve fazer."
+        },
+        {
+          "img": "assets/CADASTRO MORADOR 2.jpeg",
+          "x": 49.4,
+          "y": 12.8,
+          "w": 49.1,
+          "h": 15.6,
+          "highlight": true,
+          "title": "Nova etapa",
+          "text": "Descreva o que o usuário deve fazer."
+        },
+        {
+          "img": "assets/Cadastro visitantes.jpeg",
+          "x": 78.5,
+          "y": 77.3,
+          "w": 20.6,
+          "h": 9.8,
+          "highlight": true,
+          "title": "Nova etapa",
+          "text": "Descreva o que o usuário deve fazer."
+        },
+        {
+          "img": "assets/Cadastro visitantes 2.jpeg",
+          "x": 2.4,
+          "y": 14.9,
+          "w": 96.3,
+          "h": 60,
+          "highlight": true,
+          "title": "Nova etapa",
+          "text": "Descreva o que o usuário deve fazer."
+        },
+        {
+          "img": "assets/Cadastro visitantes 2.jpeg",
+          "x": 75.7,
+          "y": 5.5,
+          "w": 23,
+          "h": 9.4,
+          "highlight": true,
+          "title": "Nova etapa",
+          "text": "Descreva o que o usuário deve fazer."
+        }
+      ]
     }
   },
   "condos": {
@@ -548,7 +614,8 @@
       "listaportaria": true,
       "veiculos": true,
       "prestadores": true,
-      "documentos": true
+      "documentos": true,
+      "menu_1790974025392": true
     },
     "Paraíso dos Lagos": {
       "moradores": true,
@@ -561,7 +628,8 @@
       "listaportaria": true,
       "veiculos": true,
       "prestadores": false,
-      "documentos": true
+      "documentos": true,
+      "menu_1790974025392": false
     }
   },
   "github": {
@@ -571,6 +639,6 @@
     "folder": "assets"
   },
   "meta": {
-    "updatedAt": 1790973727873
+    "updatedAt": 1790974573833
   }
 }

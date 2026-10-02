@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": 1790975681205,
+  "updatedAt": 1790976957588,
   "condominio": "Showroom F&F Comunicações",
   "features": {
     "moradores": {
@@ -355,14 +355,24 @@
       ],
       "steps": [
         {
-          "img": "assets/convidados.jpeg",
-          "x": 3,
-          "y": 39,
-          "w": 94,
-          "h": 12,
+          "img": "assets/CADASTRO MORADOR 1.jpeg",
+          "x": 71.8,
+          "y": 33.4,
+          "w": 23.3,
+          "h": 14.4,
           "highlight": true,
           "title": "Selecione “Chave virtual”",
           "text": "Toque em “Chave virtual” para iniciar a criação do acesso."
+        },
+        {
+          "img": "assets/convidados.jpeg",
+          "x": 0.3,
+          "y": 38.7,
+          "w": 99.1,
+          "h": 9.1,
+          "highlight": true,
+          "title": "Nova etapa",
+          "text": "Descreva o que o usuário deve fazer."
         }
       ]
     },

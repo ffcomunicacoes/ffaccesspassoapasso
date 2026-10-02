@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": 1790978399594,
+  "updatedAt": 1790978726532,
   "condominio": "Showroom F&F Comunicações",
   "features": {
     "moradores": {
@@ -235,21 +235,21 @@
           "text": "Clique no botão convite e  escolha a opção de envio."
         },
         {
-          "img": "assets/Reconhecimento facial.jpeg",
-          "x": 2.4,
-          "y": 11.6,
-          "w": 96.9,
-          "h": 52.3,
+          "img": "assets/Convites 2.jpeg",
+          "x": 0.3,
+          "y": 15.3,
+          "w": 97.9,
+          "h": 18.5,
           "highlight": true,
           "title": "Digite as informações básicas do sistema.",
           "text": "Informe o nome completo, celular, facial, unidade e horario de inicio e fim do acesso."
         },
         {
-          "img": "assets/Reconhecimento facial.jpeg",
-          "x": 2.4,
-          "y": 71,
-          "w": 95.4,
-          "h": 6.6,
+          "img": "assets/Convites 2.jpeg",
+          "x": 79.1,
+          "y": 6.1,
+          "w": 18.1,
+          "h": 8,
           "highlight": true,
           "title": "Clique em \"Salvar\"",
           "text": "Clique em salvar para esta criando o acesso temporario da face."

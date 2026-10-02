@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "updatedAt": 1790973188118,
+  "updatedAt": 1790973727873,
   "condominio": "Showroom F&F Comunicações",
   "features": {
     "moradores": {
       "icon": "👥",
-      "label": "Ver moradores",
+      "label": "Ver Editar moradores",
       "desc": "Consultar moradores vinculados à unidade."
     },
     "cadastrar": {
@@ -95,7 +95,7 @@
           "w": 96.9,
           "h": 68.7,
           "highlight": true,
-          "title": "Moradores",
+          "title": "Lista de Moradores",
           "text": "Todos os cadastros de Moradores que estão finalizados ira aparecer nessa lista."
         }
       ]

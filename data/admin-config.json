@@ -412,14 +412,54 @@
       ],
       "steps": [
         {
-          "img": "assets/unidade-noc.jpeg",
-          "x": 51,
-          "y": 28,
-          "w": 45,
-          "h": 15,
+          "img": "assets/CADASTRO MORADOR 1.jpeg",
+          "x": 2.1,
+          "y": 54.4,
+          "w": 48.5,
+          "h": 11.9,
           "highlight": true,
           "title": "Abra “Veículos”",
           "text": "Na tela da unidade, toque em “Veículos”."
+        },
+        {
+          "img": "assets/CADASTRO MORADOR 2.jpeg",
+          "x": 50.9,
+          "y": 27.8,
+          "w": 47.5,
+          "h": 15.9,
+          "highlight": true,
+          "title": "Nova etapa",
+          "text": "Descreva o que o usuário deve fazer."
+        },
+        {
+          "img": "assets/Cadastro de veiculo.jpeg",
+          "x": 76.4,
+          "y": 76.9,
+          "w": 21.8,
+          "h": 9,
+          "highlight": true,
+          "title": "Crie um novo cadastro.",
+          "text": "Para criar um novo cadastro clique no icone \"+\"."
+        },
+        {
+          "img": "assets/Cadastro veiculo 2.jpeg",
+          "x": 1.8,
+          "y": 14.5,
+          "w": 97.2,
+          "h": 56.5,
+          "highlight": true,
+          "title": "Preencha as informações.",
+          "text": "Preencha as informações de login, tipo, marca e modelo, cor e placa do carro. E possivel adcionar um aimagem do veiculo."
+        },
+        {
+          "img": "assets/Cadastro veiculo 2.jpeg",
+          "x": 76.4,
+          "y": 5.8,
+          "w": 23,
+          "h": 8.6,
+          "highlight": true,
+          "title": "Clique em \"Salva\".",
+          "text": "Clique no botão de salvar para esta criando o cadastro."
         }
       ]
     },
@@ -531,6 +571,6 @@
     "folder": "assets"
   },
   "meta": {
-    "updatedAt": 1790970621528
+    "updatedAt": 1790973188118
   }
 }

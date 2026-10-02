@@ -172,8 +172,8 @@
           "w": 32.8,
           "h": 14.6,
           "highlight": true,
-          "title": "Nova etapa",
-          "text": "Descreva o que o usuário deve fazer."
+          "title": "Adicione uma face",
+          "text": "Adcione a face para esta enviando para o facial"
         },
         {
           "img": "assets/CADASTRO MORADOR 5.jpeg",
@@ -182,8 +182,8 @@
           "w": 23.3,
           "h": 9.7,
           "highlight": true,
-          "title": "Adicione uma face",
-          "text": "Adcione a face para esta enviando para o facial"
+          "title": "Clique em \"Salvar\"",
+          "text": "Clique em \"Salvar\", para finalizar o cadastro."
         }
       ]
     },
@@ -719,6 +719,6 @@
     "folder": "assets"
   },
   "meta": {
-    "updatedAt": 1790978726532
+    "updatedAt": 1790978926163
   }
 }

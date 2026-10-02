@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "updatedAt": 1790974573833,
+  "updatedAt": 1790974761981,
   "condominio": "Paraíso dos Lagos",
   "features": {
     "moradores": {
       "icon": "👥",
-      "label": "Ver Editar moradores",
+      "label": "Editar moradores",
       "desc": "Consultar moradores vinculados à unidade."
     },
     "convidar": {

@@ -337,14 +337,24 @@
       ],
       "steps": [
         {
-          "img": "assets/convidados.jpeg",
-          "x": 3,
-          "y": 29,
-          "w": 94,
-          "h": 12,
+          "img": "assets/CADASTRO MORADOR 1.jpeg",
+          "x": 68.4,
+          "y": 32.7,
+          "w": 27.9,
+          "h": 15.2,
           "highlight": true,
           "title": "Selecione “QR Scanner”",
           "text": "Na tela de convidados, toque em “QR Scanner”."
+        },
+        {
+          "img": "assets/convidados.jpeg",
+          "x": 0,
+          "y": 46.9,
+          "w": 97.8,
+          "h": 10.2,
+          "highlight": true,
+          "title": "Nova etapa",
+          "text": "Descreva o que o usuário deve fazer."
         }
       ]
     },
@@ -649,6 +659,6 @@
     "folder": "assets"
   },
   "meta": {
-    "updatedAt": 1790976957588
+    "updatedAt": 1790977097610
   }
 }

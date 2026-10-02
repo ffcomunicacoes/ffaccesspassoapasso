@@ -355,6 +355,36 @@
           "highlight": true,
           "title": "Nova etapa",
           "text": "Descreva o que o usuário deve fazer."
+        },
+        {
+          "img": "assets/qr scanner 1.jpeg",
+          "x": 77,
+          "y": 77.2,
+          "w": 21.8,
+          "h": 9.5,
+          "highlight": true,
+          "title": "Nova etapa",
+          "text": "Descreva o que o usuário deve fazer."
+        },
+        {
+          "img": "assets/qr scanner 2.jpeg",
+          "x": 0.9,
+          "y": 11.2,
+          "w": 97.5,
+          "h": 53.4,
+          "highlight": true,
+          "title": "Nova etapa",
+          "text": "Descreva o que o usuário deve fazer."
+        },
+        {
+          "img": "assets/qr scanner 2.jpeg",
+          "x": 1.2,
+          "y": 71.2,
+          "w": 97.2,
+          "h": 6.8,
+          "highlight": true,
+          "title": "Nova etapa",
+          "text": "Descreva o que o usuário deve fazer."
         }
       ]
     },
@@ -719,6 +749,6 @@
     "folder": "assets"
   },
   "meta": {
-    "updatedAt": 1790979040007
+    "updatedAt": 1790979401022
   }
 }

@@ -1,0 +1,343 @@
+{
+  "version": 1,
+  "updatedAt": 1790951475232,
+  "condominio": "Paraíso dos Lagos",
+  "features": {
+    "moradores": {
+      "icon": "👥",
+      "label": "Ver moradores",
+      "desc": "Consultar moradores vinculados à unidade."
+    },
+    "convidar": {
+      "icon": "✉️",
+      "label": "Convidar morador",
+      "desc": "Enviar convite para criação de conta."
+    },
+    "facial": {
+      "icon": "🙂",
+      "label": "Reconhecimento facial",
+      "desc": "Criar convite com reconhecimento facial."
+    },
+    "qrscanner": {
+      "icon": "▣",
+      "label": "QR Scanner",
+      "desc": "Acesso do convidado via leitura de QR."
+    },
+    "qrcode": {
+      "icon": "▦",
+      "label": "QR Code",
+      "desc": "Criar acesso usando QR Code."
+    },
+    "listaportaria": {
+      "icon": "☷",
+      "label": "Avisar portaria",
+      "desc": "Criar lista de visitantes para a portaria."
+    },
+    "veiculos": {
+      "icon": "🚗",
+      "label": "Veículos",
+      "desc": "Gerenciar veículos da unidade."
+    },
+    "documentos": {
+      "icon": "📁",
+      "label": "Documentos da unidade",
+      "desc": "Consultar documentos vinculados à unidade."
+    }
+  },
+  "tutorials": {
+    "moradores": {
+      "title": "Como ver os moradores da unidade?",
+      "keywords": [
+        "morador",
+        "moradores",
+        "ver moradores"
+      ],
+      "steps": [
+        {
+          "img": "assets/unidade-noc.jpeg",
+          "x": 4,
+          "y": 12,
+          "w": 44,
+          "h": 15,
+          "highlight": true,
+          "title": "Abra “Moradores”",
+          "text": "Na tela da unidade, toque no card “Moradores”."
+        },
+        {
+          "img": "assets/CADASTRO MORADOR 3.jpeg",
+          "x": 2,
+          "y": 12,
+          "w": 95,
+          "h": 76,
+          "highlight": true,
+          "title": "Consulte a lista",
+          "text": "A tela exibirá os moradores vinculados, com foto, nome e dados disponíveis."
+        }
+      ]
+    },
+    "convidar": {
+      "title": "Como convidar um morador?",
+      "keywords": [
+        "convidar morador",
+        "convite morador",
+        "criar conta"
+      ],
+      "steps": [
+        {
+          "img": "assets/CADASTRO MORADOR 1.jpeg",
+          "x": 2.7,
+          "y": 54.9,
+          "w": 46.6,
+          "h": 11.2,
+          "highlight": true,
+          "title": "Abra o menu de \"Cadastros\"",
+          "text": "Clique no carde, lado esquerdo da tela \"Cadastros\""
+        },
+        {
+          "img": "assets/CADASTRO MORADOR 2.jpeg",
+          "x": 1.5,
+          "y": 12.4,
+          "w": 49.1,
+          "h": 15.3,
+          "highlight": true,
+          "title": "Toque em “Moradores”",
+          "text": "Selecione “Moradores” para iniciar o envio do convite."
+        },
+        {
+          "img": "assets/CADASTRO MORADOR 3.jpeg",
+          "x": 78.2,
+          "y": 77.8,
+          "w": 20.9,
+          "h": 9,
+          "highlight": true,
+          "title": "Clique no botão \"+\".",
+          "text": "Clique e espanda as opções de cadastros."
+        },
+        {
+          "img": "assets/CADASTRO MORADOR 4.jpeg",
+          "x": 52.7,
+          "y": 64.7,
+          "w": 42,
+          "h": 7.5,
+          "highlight": true,
+          "title": "Clique no botão \"Convite\"",
+          "text": "Clique no botão convite e  escolha a opção de envio."
+        },
+        {
+          "img": "",
+          "x": 10,
+          "y": 10,
+          "w": 30,
+          "h": 10,
+          "highlight": true,
+          "title": "Nova etapa",
+          "text": "Descreva o que o usuário deve fazer."
+        }
+      ]
+    },
+    "facial": {
+      "title": "Como convidar por reconhecimento facial?",
+      "keywords": [
+        "reconhecimento facial",
+        "facial",
+        "cadastrar rosto",
+        "convite facial"
+      ],
+      "steps": [
+        {
+          "img": "assets/convidados.jpeg",
+          "x": 3,
+          "y": 20,
+          "w": 94,
+          "h": 12,
+          "highlight": true,
+          "title": "Escolha “Reconhecimento facial”",
+          "text": "Em Convidados, toque em “Reconhecimento facial”."
+        },
+        {
+          "img": "assets/lista-convites.jpeg",
+          "x": 81,
+          "y": 82,
+          "w": 13,
+          "h": 7,
+          "highlight": true,
+          "title": "Crie um novo convite",
+          "text": "Na lista de convites, toque no botão “+”."
+        },
+        {
+          "img": "assets/cadastro-facial.jpeg",
+          "x": 17,
+          "y": 11,
+          "w": 76,
+          "h": 11,
+          "highlight": true,
+          "title": "Informe nome e celular",
+          "text": "Preencha o nome completo e o celular do convidado."
+        },
+        {
+          "img": "assets/cadastro-facial.jpeg",
+          "x": 4,
+          "y": 27,
+          "w": 92,
+          "h": 7,
+          "highlight": true,
+          "title": "Selecione a unidade",
+          "text": "Escolha a unidade que o convidado poderá acessar."
+        },
+        {
+          "img": "assets/cadastro-facial.jpeg",
+          "x": 4,
+          "y": 35,
+          "w": 92,
+          "h": 21,
+          "highlight": true,
+          "title": "Defina início e fim",
+          "text": "Informe a data e a hora de início e término."
+        },
+        {
+          "img": "assets/cadastro-facial.jpeg",
+          "x": 4,
+          "y": 74,
+          "w": 92,
+          "h": 7,
+          "highlight": true,
+          "title": "Salve o convite",
+          "text": "Revise os dados e toque em “Salvar”."
+        }
+      ]
+    },
+    "qrscanner": {
+      "title": "Como usar QR Scanner para convidado?",
+      "keywords": [
+        "qr scanner",
+        "scanner",
+        "ler qr"
+      ],
+      "steps": [
+        {
+          "img": "assets/convidados.jpeg",
+          "x": 3,
+          "y": 29,
+          "w": 94,
+          "h": 12,
+          "highlight": true,
+          "title": "Selecione “QR Scanner”",
+          "text": "Na tela de convidados, toque em “QR Scanner”."
+        }
+      ]
+    },
+    "qrcode": {
+      "title": "Como criar acesso por QR Code?",
+      "keywords": [
+        "qr code",
+        "qrcode",
+        "codigo qr"
+      ],
+      "steps": [
+        {
+          "img": "assets/convidados.jpeg",
+          "x": 3,
+          "y": 49,
+          "w": 94,
+          "h": 12,
+          "highlight": true,
+          "title": "Selecione “QR Code”",
+          "text": "Toque em “QR Code” para criar o convite."
+        }
+      ]
+    },
+    "listaportaria": {
+      "title": "Como avisar a portaria?",
+      "keywords": [
+        "avisar portaria",
+        "lista portaria",
+        "criar lista"
+      ],
+      "steps": [
+        {
+          "img": "assets/convidados.jpeg",
+          "x": 3,
+          "y": 63,
+          "w": 94,
+          "h": 12,
+          "highlight": true,
+          "title": "Toque em “Criar lista”",
+          "text": "Na seção “Avisar portaria”, toque em “Criar lista”."
+        }
+      ]
+    },
+    "veiculos": {
+      "title": "Como acessar veículos?",
+      "keywords": [
+        "veiculo",
+        "veículo",
+        "carro",
+        "placa"
+      ],
+      "steps": [
+        {
+          "img": "assets/unidade-noc.jpeg",
+          "x": 51,
+          "y": 28,
+          "w": 45,
+          "h": 15,
+          "highlight": true,
+          "title": "Abra “Veículos”",
+          "text": "Na tela da unidade, toque em “Veículos”."
+        }
+      ]
+    },
+    "documentos": {
+      "title": "Como acessar documentos da unidade?",
+      "keywords": [
+        "documento",
+        "documentos",
+        "arquivo",
+        "criar pasta",
+        "adicionar documento"
+      ],
+      "steps": [
+        {
+          "img": "assets/unidade-noc.jpeg",
+          "x": 51,
+          "y": 45,
+          "w": 45,
+          "h": 15,
+          "highlight": true,
+          "title": "Abra “Documentos deste(a) Unidade”",
+          "text": "Toque no card de documentos."
+        },
+        {
+          "img": "assets/documentos-menu.jpeg",
+          "x": 82,
+          "y": 83,
+          "w": 13,
+          "h": 8,
+          "highlight": true,
+          "title": "Toque no botão +",
+          "text": "Na tela de documentos, toque no botão azul “+”."
+        },
+        {
+          "img": "assets/documentos-menu.jpeg",
+          "x": 58,
+          "y": 69,
+          "w": 35,
+          "h": 6,
+          "highlight": true,
+          "title": "Escolha “Adicionar Documento”",
+          "text": "Para enviar um arquivo, toque em “Adicionar Documento”."
+        },
+        {
+          "img": "assets/documentos-menu.jpeg",
+          "x": 63,
+          "y": 57,
+          "w": 30,
+          "h": 6,
+          "highlight": true,
+          "title": "Ou escolha “Criar Pasta”",
+          "text": "Para organizar os arquivos, toque em “Criar Pasta”."
+        }
+      ]
+    }
+  }
+}

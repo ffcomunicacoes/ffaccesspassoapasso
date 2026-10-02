@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": 1790951625015,
+  "updatedAt": 1790952379438,
   "condominio": "Paraíso dos Lagos",
   "features": {
     "moradores": {
@@ -54,24 +54,24 @@
       ],
       "steps": [
         {
-          "img": "assets/unidade-noc.jpeg",
-          "x": 4,
-          "y": 12,
-          "w": 44,
-          "h": 15,
+          "img": "assets/CADASTRO MORADOR 1.jpeg",
+          "x": 2.4,
+          "y": 54.9,
+          "w": 46.3,
+          "h": 11,
           "highlight": true,
-          "title": "Abra “Moradores”",
-          "text": "Na tela da unidade, toque no card “Moradores”."
+          "title": "Abra “Cadastros”",
+          "text": "Na tela da unidade, toque no card “Cadastros”."
         },
         {
-          "img": "assets/CADASTRO MORADOR 3.jpeg",
-          "x": 2,
-          "y": 12,
-          "w": 95,
-          "h": 76,
+          "img": "assets/CADASTRO MORADOR 2.jpeg",
+          "x": 1.5,
+          "y": 12.2,
+          "w": 49.1,
+          "h": 16.6,
           "highlight": true,
-          "title": "Consulte a lista",
-          "text": "A tela exibirá os moradores vinculados, com foto, nome e dados disponíveis."
+          "title": "Clique no ícone \"Moradores\"",
+          "text": "Selecione o ícone \"Moradores\" para verificar as informações dos moradores."
         }
       ]
     },

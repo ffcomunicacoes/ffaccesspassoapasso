@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": 1790953645923,
+  "updatedAt": 1790969666158,
   "condominio": "Paraíso dos Lagos",
   "features": {
     "moradores": {
@@ -155,61 +155,61 @@
       ],
       "steps": [
         {
-          "img": "assets/convidados.jpeg",
-          "x": 3,
-          "y": 20,
-          "w": 94,
-          "h": 12,
+          "img": "assets/CADASTRO MORADOR 1.jpeg",
+          "x": 68.4,
+          "y": 33.6,
+          "w": 28.8,
+          "h": 13.9,
           "highlight": true,
-          "title": "Escolha “Reconhecimento facial”",
-          "text": "Em Convidados, toque em “Reconhecimento facial”."
+          "title": "Escolha “Convites”",
+          "text": "Em Convites, toque em “Reconhecimento facial”."
+        },
+        {
+          "img": "assets/convidados.jpeg",
+          "x": 1.5,
+          "y": 21.8,
+          "w": 95.4,
+          "h": 7.9,
+          "highlight": true,
+          "title": "Crie um novo convite",
+          "text": "Clique em reconhecimento facial para esta criando um novo convite."
         },
         {
           "img": "assets/lista-convites.jpeg",
-          "x": 81,
-          "y": 82,
-          "w": 13,
-          "h": 7,
+          "x": 77.6,
+          "y": 77.5,
+          "w": 20.9,
+          "h": 10.2,
           "highlight": true,
-          "title": "Crie um novo convite",
+          "title": "Informe nome e celular",
           "text": "Na lista de convites, toque no botão “+”."
         },
         {
           "img": "assets/cadastro-facial.jpeg",
-          "x": 17,
-          "y": 11,
-          "w": 76,
-          "h": 11,
-          "highlight": true,
-          "title": "Informe nome e celular",
-          "text": "Preencha o nome completo e o celular do convidado."
-        },
-        {
-          "img": "assets/cadastro-facial.jpeg",
-          "x": 4,
-          "y": 27,
-          "w": 92,
-          "h": 7,
+          "x": 1.8,
+          "y": 12.3,
+          "w": 96.6,
+          "h": 27.6,
           "highlight": true,
           "title": "Selecione a unidade",
-          "text": "Escolha a unidade que o convidado poderá acessar."
+          "text": "Escolha a unidade que o convidado poderá acessar e imagem do rosto."
         },
         {
           "img": "assets/cadastro-facial.jpeg",
-          "x": 4,
-          "y": 35,
-          "w": 92,
-          "h": 21,
+          "x": 1.5,
+          "y": 38.5,
+          "w": 97.5,
+          "h": 17.1,
           "highlight": true,
           "title": "Defina início e fim",
           "text": "Informe a data e a hora de início e término."
         },
         {
           "img": "assets/cadastro-facial.jpeg",
-          "x": 4,
-          "y": 74,
-          "w": 92,
-          "h": 7,
+          "x": 0.9,
+          "y": 71,
+          "w": 97.9,
+          "h": 7.2,
           "highlight": true,
           "title": "Salve o convite",
           "text": "Revise os dados e toque em “Salvar”."

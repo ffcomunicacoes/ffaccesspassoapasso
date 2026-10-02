@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": 1790952379438,
+  "updatedAt": 1790953645923,
   "condominio": "Showroom F&F Comunicações",
   "features": {
     "moradores": {
@@ -87,6 +87,16 @@
           "highlight": true,
           "title": "Clique no ícone \"Moradores\"",
           "text": "Selecione o ícone \"Moradores\" para verificar as informações dos moradores."
+        },
+        {
+          "img": "assets/CADASTRO MORADOR 3.jpeg",
+          "x": 0.6,
+          "y": 10.5,
+          "w": 96.9,
+          "h": 68.7,
+          "highlight": true,
+          "title": "Moradores",
+          "text": "Todos os cadastros de Moradores que estão finalizados ira aparecer nessa lista."
         }
       ]
     },

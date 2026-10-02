@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": 1790977294783,
+  "updatedAt": 1790978067321,
   "condominio": "Showroom F&F Comunicações",
   "features": {
     "moradores": {
@@ -538,44 +538,54 @@
       ],
       "steps": [
         {
-          "img": "assets/unidade-noc.jpeg",
-          "x": 51,
-          "y": 45,
-          "w": 45,
-          "h": 15,
+          "img": "assets/CADASTRO MORADOR 1.jpeg",
+          "x": 70.2,
+          "y": 33.1,
+          "w": 25.8,
+          "h": 14.5,
           "highlight": true,
           "title": "Abra “Documentos deste(a) Unidade”",
           "text": "Toque no card de documentos."
         },
         {
-          "img": "assets/documentos-menu.jpeg",
-          "x": 82,
-          "y": 83,
-          "w": 13,
-          "h": 8,
+          "img": "assets/CADASTRO MORADOR 2.jpeg",
+          "x": 49.1,
+          "y": 43.4,
+          "w": 49.4,
+          "h": 15.5,
           "highlight": true,
           "title": "Toque no botão +",
           "text": "Na tela de documentos, toque no botão azul “+”."
         },
         {
-          "img": "assets/documentos-menu.jpeg",
-          "x": 58,
-          "y": 69,
-          "w": 35,
-          "h": 6,
+          "img": "assets/Documentos 1.jpeg",
+          "x": 75.4,
+          "y": 77.5,
+          "w": 24.6,
+          "h": 9.7,
           "highlight": true,
           "title": "Escolha “Adicionar Documento”",
           "text": "Para enviar um arquivo, toque em “Adicionar Documento”."
         },
         {
           "img": "assets/documentos-menu.jpeg",
-          "x": 63,
-          "y": 57,
-          "w": 30,
-          "h": 6,
+          "x": 50.3,
+          "y": 64.5,
+          "w": 47.2,
+          "h": 7.9,
           "highlight": true,
           "title": "Ou escolha “Criar Pasta”",
           "text": "Para organizar os arquivos, toque em “Criar Pasta”."
+        },
+        {
+          "img": "assets/documentos-menu.jpeg",
+          "x": 22.4,
+          "y": 71.2,
+          "w": 74.8,
+          "h": 8.4,
+          "highlight": true,
+          "title": "Nova etapa",
+          "text": "Descreva o que o usuário deve fazer."
         }
       ]
     },

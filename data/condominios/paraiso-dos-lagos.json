@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": 1790979401022,
+  "updatedAt": 1790979618448,
   "condominio": "Paraíso dos Lagos",
   "features": {
     "moradores": {
@@ -251,8 +251,8 @@
           "w": 99.4,
           "h": 8.8,
           "highlight": true,
-          "title": "Nova etapa",
-          "text": "Descreva o que o usuário deve fazer."
+          "title": "Seleciona a opção de QR Scanner",
+          "text": "Selecione a opção de vonvites por QR Scanner."
         },
         {
           "img": "assets/qr scanner 1.jpeg",
@@ -261,8 +261,8 @@
           "w": 21.8,
           "h": 9.5,
           "highlight": true,
-          "title": "Nova etapa",
-          "text": "Descreva o que o usuário deve fazer."
+          "title": "Clique no botão \"+\".",
+          "text": "Clique no botão de \"+\", para criar um novo convite por QR Scanner."
         },
         {
           "img": "assets/qr scanner 2.jpeg",
@@ -271,8 +271,8 @@
           "w": 97.5,
           "h": 53.4,
           "highlight": true,
-          "title": "Nova etapa",
-          "text": "Descreva o que o usuário deve fazer."
+          "title": "Digite as informações de cadastros",
+          "text": "Informe nome, celular, unidade, horario de inicio e fim."
         },
         {
           "img": "assets/qr scanner 2.jpeg",
@@ -281,8 +281,8 @@
           "w": 97.2,
           "h": 6.8,
           "highlight": true,
-          "title": "Nova etapa",
-          "text": "Descreva o que o usuário deve fazer."
+          "title": "Clique no botão de \"Salvar\"",
+          "text": "Clique no botão de salvar, para armazenar as informações de acesso."
         }
       ]
     },

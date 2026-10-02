@@ -102,7 +102,7 @@
           "h": 68.7,
           "highlight": true,
           "title": "Lista de Moradores",
-          "text": "Todos os cadastros de Moradores que estão finalizados ira aparecer nessa lista."
+          "text": "Todos os cadastros de Moradores que estão finalizados ira aparecer nessa lista, clicando no cadastro é possivel editar."
         }
       ]
     },
@@ -639,6 +639,6 @@
     "folder": "assets"
   },
   "meta": {
-    "updatedAt": 1790974761981
+    "updatedAt": 1790975681205
   }
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": 1791034216325,
+  "updatedAt": 1791034742569,
   "condominio": "Paraiso",
   "features": {
     "moradores": {
@@ -754,7 +754,9 @@
         "E-mail",
         "convite",
         "finalizar cadastro",
-        "receber o convite."
+        "receber o convite",
+        "Ver convite",
+        "ver o link."
       ],
       "steps": [
         {

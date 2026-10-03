@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": 1791034893224,
+  "updatedAt": 1791037207694,
   "condominio": "Showroom F&F Comunicações",
   "features": {
     "moradores": {
@@ -62,6 +62,11 @@
       "icon": "🫂",
       "label": "Cadastro de visitantes",
       "desc": "Nova função do sistema."
+    },
+    "menu_1791030014353": {
+      "icon": "📩",
+      "label": "Como verificar e cadastrar pelo E-mail.",
+      "desc": "Como finalizar o cadastro pelo e-mail."
     }
   },
   "tutorials": {
@@ -740,6 +745,89 @@
           "highlight": true,
           "title": "Nova etapa",
           "text": "Descreva o que o usuário deve fazer."
+        }
+      ]
+    },
+    "menu_1791030014353": {
+      "title": "Como cadastrar minha conta pelo e-mail?",
+      "keywords": [
+        "E-mail",
+        "convite",
+        "finalizar cadastro",
+        "receber o convite",
+        "Ver convite",
+        "ver o link."
+      ],
+      "steps": [
+        {
+          "img": "assets/E-mail 1.jpeg",
+          "x": 1.8,
+          "y": 18.5,
+          "w": 97.5,
+          "h": 9.2,
+          "highlight": true,
+          "title": "Encontre o E-mail.",
+          "text": "O e-mail vai parecer com o nome do condiminio e informando informando que se trata do convite. Se não concontrar verifique na caixa de spam."
+        },
+        {
+          "img": "assets/E-mail 2.jpeg",
+          "x": 15,
+          "y": 71.2,
+          "w": 70.6,
+          "h": 6.5,
+          "highlight": true,
+          "title": "Clique no Botão de \"Confirmar Cadastro\"",
+          "text": "Clicando no \"Confirmar Cadastro\", ira para a aba de finalização do cadastro."
+        },
+        {
+          "img": "assets/E-MAIL 3.jpeg",
+          "x": 5.8,
+          "y": 39.5,
+          "w": 89.9,
+          "h": 28.7,
+          "highlight": true,
+          "title": "Digite as informações de cadastro",
+          "text": "Nesse passo, o sistema ira solicitar as informações que estão pendentes. A senha para esta acessando o aplicativo."
+        },
+        {
+          "img": "assets/E-MAIL 3.jpeg",
+          "x": 7.3,
+          "y": 68.9,
+          "w": 81.9,
+          "h": 13.8,
+          "highlight": true,
+          "title": "Verifique o Termo de uso",
+          "text": "Leia e verifique o termo de uso e politica de privacidade, clicando no link \"Clique aqui\". Se for de acordo, clique para ativar a caixinha a esquerda."
+        },
+        {
+          "img": "assets/E-MAIL 3.jpeg",
+          "x": 7.3,
+          "y": 83.9,
+          "w": 84.4,
+          "h": 5,
+          "highlight": true,
+          "title": "Clique em \"Criar usuário\"",
+          "text": "Clique em criar usuário para finalizar a o cadastro."
+        },
+        {
+          "img": "assets/e-MAIL 4.jpeg",
+          "x": 8.3,
+          "y": 33.6,
+          "w": 83.7,
+          "h": 5.5,
+          "highlight": true,
+          "title": "Escolha uma opção para baixar o aplicativo",
+          "text": "Clicando na opção de \"ir para login\", recebera o convite para ir para o play store ou abrir o aplicativo caso tiver instalado."
+        },
+        {
+          "img": "assets/e-MAIL 4.jpeg",
+          "x": 8.9,
+          "y": 39.4,
+          "w": 82.8,
+          "h": 5.2,
+          "highlight": true,
+          "title": "Opção para iphone.",
+          "text": "Essa opção exclusivo para pessoa que possuem o sistema IOS."
         }
       ]
     }

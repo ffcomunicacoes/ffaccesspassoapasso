@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": 1791037207694,
+  "updatedAt": 1791037354974,
   "condominio": "Showroom F&F Comunicações",
   "features": {
     "moradores": {
@@ -197,7 +197,7 @@
         "convidar morador",
         "convite morador",
         "criar conta",
-        "Link",
+        "Mandar o link",
         "enviar convite",
         "enviar link"
       ],

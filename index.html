@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#071343">
-<title>F&F Access | Central de Ajuda V9</title>
+<title>F&F Access | Central de Ajuda V10</title>
 <style>
 :root{
   --navy:#071343;--navy-2:#10266f;--blue:#2563eb;--blue-soft:#eef4ff;
@@ -241,7 +241,7 @@ body.public-condo #adminBtn,body.public-condo #condoSelect{display:none!importan
       <div class="admin-body">
         <section class="admin-pane active" id="pane-condos">
           <div class="pane-title"><div><h3>Condomínios e opções</h3><p>Ative ou desative funções individualmente para cada condomínio.</p></div><button class="save" id="saveFeatures" type="button">Salvar</button></div>
-          <div class="config-grid"><div class="panel-box"><div class="field"><label>Condomínio</label><select id="adminCondo"></select></div><div class="field"><label>Novo condomínio</label><input id="newCondo" placeholder="Ex.: Paraíso dos Lagos"><button class="secondary" id="addCondo" type="button">+ Adicionar condomínio</button></div><hr style="border:0;border-top:1px solid var(--line);margin:20px 0"><div class="field"><label>Novo usuário admin</label><input id="newAdminUser" placeholder="Usuário"><input id="newAdminPass" type="password" placeholder="Nova senha"><button class="secondary" id="changeAdmin" type="button">Alterar credencial</button></div></div><div class="panel-box"><div class="section-head"><div><h3 style="margin:0">Funções disponíveis</h3><div class="hint">Desmarcar remove a função apenas deste condomínio.</div></div></div><div id="featureList"></div></div></div><div class="panel-box" style="margin-top:16px"><div class="section-head"><div><h3 style="margin:0">Links por condomínio</h3><div class="hint">Cada link abre somente o conteúdo daquele condomínio. O visitante não vê seletor, painel administrativo nem links de outros condomínios.</div></div></div><div class="public-links" id="publicLinks"></div></div>
+          <div class="config-grid"><div class="panel-box"><div class="field"><label>Condomínio</label><select id="adminCondo"></select></div><div class="field"><label>Novo condomínio</label><input id="newCondo" placeholder="Ex.: Paraíso dos Lagos"><button class="secondary" id="addCondo" type="button">+ Adicionar condomínio</button></div><hr style="border:0;border-top:1px solid var(--line);margin:20px 0"><div class="field"><label>Novo usuário admin</label><input id="newAdminUser" placeholder="Usuário"><input id="newAdminPass" type="password" placeholder="Nova senha"><button class="secondary" id="changeAdmin" type="button">Alterar credencial</button></div></div><div class="panel-box"><div class="section-head"><div><h3 style="margin:0">Funções disponíveis</h3><div class="hint">A primeira marcação habilita no condomínio; a opção “Mostrar nos acessos rápidos” define se aparece na tela inicial.</div></div></div><div id="featureList"></div></div></div><div class="panel-box" style="margin-top:16px"><div class="section-head"><div><h3 style="margin:0">Links por condomínio</h3><div class="hint">Cada link abre somente o conteúdo daquele condomínio. O visitante não vê seletor, painel administrativo nem links de outros condomínios.</div></div></div><div class="public-links" id="publicLinks"></div></div>
         </section>
 
         <section class="admin-pane" id="pane-editor">
@@ -288,18 +288,19 @@ body.public-condo #adminBtn,body.public-condo #condoSelect{display:none!importan
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
+const PRIMARY_FEATURE_KEYS=['moradores','cadastrar','convidar','facial','qrscanner','chave','qrcode','listaportaria'];
 const SEED_FEATURES={
-  moradores:{icon:'👥',label:'Ver moradores',desc:'Consultar moradores vinculados à unidade.'},
-  cadastrar:{icon:'➕',label:'Cadastrar morador',desc:'Adicionar um novo morador na unidade.'},
-  convidar:{icon:'✉️',label:'Convidar morador',desc:'Enviar convite para criação de conta.'},
-  facial:{icon:'🙂',label:'Reconhecimento facial',desc:'Criar convite com reconhecimento facial.'},
-  qrscanner:{icon:'▣',label:'QR Scanner',desc:'Acesso do convidado via leitura de QR.'},
-  chave:{icon:'🔑',label:'Chave virtual',desc:'Acesso temporário por chave virtual.'},
-  qrcode:{icon:'▦',label:'QR Code',desc:'Criar acesso usando QR Code.'},
-  listaportaria:{icon:'☷',label:'Avisar portaria',desc:'Criar lista de visitantes para a portaria.'},
-  veiculos:{icon:'🚗',label:'Veículos',desc:'Gerenciar veículos da unidade.'},
-  prestadores:{icon:'🔧',label:'Prestadores e funcionários',desc:'Gerenciar prestadores e funcionários.'},
-  documentos:{icon:'📁',label:'Documentos da unidade',desc:'Consultar documentos vinculados à unidade.'}
+  moradores:{icon:'👥',label:'Ver moradores',desc:'Consultar moradores vinculados à unidade.',featured:true},
+  cadastrar:{icon:'➕',label:'Cadastrar morador',desc:'Adicionar um novo morador na unidade.',featured:true},
+  convidar:{icon:'✉️',label:'Convidar morador',desc:'Enviar convite para criação de conta.',featured:true},
+  facial:{icon:'🙂',label:'Reconhecimento facial',desc:'Criar convite com reconhecimento facial.',featured:true},
+  qrscanner:{icon:'▣',label:'QR Scanner',desc:'Acesso do convidado via leitura de QR.',featured:true},
+  chave:{icon:'🔑',label:'Chave virtual',desc:'Acesso temporário por chave virtual.',featured:true},
+  qrcode:{icon:'▦',label:'QR Code',desc:'Criar acesso usando QR Code.',featured:true},
+  listaportaria:{icon:'☷',label:'Avisar portaria',desc:'Criar lista de visitantes para a portaria.',featured:true},
+  veiculos:{icon:'🚗',label:'Veículos',desc:'Gerenciar veículos da unidade.',featured:false},
+  prestadores:{icon:'🔧',label:'Prestadores e funcionários',desc:'Gerenciar prestadores e funcionários.',featured:false},
+  documentos:{icon:'📁',label:'Documentos da unidade',desc:'Consultar documentos vinculados à unidade.',featured:false}
 };
 const SEED_TUTORIALS={
   moradores:{title:'Como ver os moradores da unidade?',keywords:['morador','moradores','ver moradores'],steps:[
@@ -342,15 +343,15 @@ Object.keys(SEED_FEATURES).forEach(k=>{DEFAULT.condos['Showroom F&F Comunicaçõ
 
 const $=id=>document.getElementById(id);
 const esc=(s='')=>String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
-const STORAGE_KEY='ffaccess_help_v8';
+const STORAGE_KEY='ffaccess_help_v10';
 let state=loadState();
 let currentTutorial=null,stepIndex=0,editKey=null,editStep=0,drawing=false,drawStart=null;
 let pendingPublishReason=null;
 let currentPublicUrl=null,currentEditorUrl=null;
 let lockedCondo=null;
 
-function migrate(s){if(!s)return clone(DEFAULT);s.meta=s.meta||{updatedAt:0};s.admin=s.admin||clone(DEFAULT.admin);if(s.admin.pass&&!s.admin.passHash){s.admin.passHash=null}s.github={...clone(DEFAULT.github),...(s.github||{})};s.features=s.features||clone(SEED_FEATURES);s.tutorials=s.tutorials||clone(SEED_TUTORIALS);s.condos=s.condos||clone(DEFAULT.condos);for(const c of Object.keys(s.condos))for(const k of Object.keys(s.features))if(typeof s.condos[c][k]!=='boolean')s.condos[c][k]=true;return s}
-function loadState(){try{const raw=localStorage.getItem(STORAGE_KEY)||localStorage.getItem('ffaccess_help_v7')||localStorage.getItem('ffaccess_help_v6')||localStorage.getItem('ffaccess_help_v5');return raw?migrate(JSON.parse(raw)):clone(DEFAULT)}catch{return clone(DEFAULT)}}
+function migrate(s){if(!s)return clone(DEFAULT);s.meta=s.meta||{updatedAt:0};s.admin=s.admin||clone(DEFAULT.admin);if(s.admin.pass&&!s.admin.passHash){s.admin.passHash=null}s.github={...clone(DEFAULT.github),...(s.github||{})};s.features=s.features||clone(SEED_FEATURES);s.tutorials=s.tutorials||clone(SEED_TUTORIALS);s.condos=s.condos||clone(DEFAULT.condos);const featureKeys=Object.keys(s.features);featureKeys.forEach((k,i)=>{const f=s.features[k]||{};if(typeof f.featured!=='boolean')f.featured=PRIMARY_FEATURE_KEYS.includes(k)||(i<8&&!SEED_FEATURES[k]);s.features[k]=f});for(const c of Object.keys(s.condos))for(const k of featureKeys)if(typeof s.condos[c][k]!=='boolean')s.condos[c][k]=true;return s}
+function loadState(){try{const raw=localStorage.getItem(STORAGE_KEY)||localStorage.getItem('ffaccess_help_v8')||localStorage.getItem('ffaccess_help_v7')||localStorage.getItem('ffaccess_help_v6')||localStorage.getItem('ffaccess_help_v5');return raw?migrate(JSON.parse(raw)):clone(DEFAULT)}catch{return clone(DEFAULT)}}
 function persist(touch=true){if(touch){state.meta=state.meta||{};state.meta.updatedAt=Date.now()}localStorage.setItem(STORAGE_KEY,JSON.stringify(state))}
 function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>$('toast').classList.remove('show'),2300)}
 function condo(){return lockedCondo||$('condoSelect').value||Object.keys(state.condos)[0]}
@@ -360,7 +361,14 @@ function num(v){return Number.isFinite(Number(v))?Math.round(Number(v)*10)/10:''
 function normalize(s){return String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 ]/g,' ')}
 function slugify(s){return normalize(s).trim().replace(/\s+/g,'-').replace(/-+/g,'-')}
 function condoBySlug(slug){return Object.keys(state.condos).find(n=>slugify(n)===slug)||null}
-function publicUrlForCondo(name){const u=new URL(location.href);u.search='';u.hash='';u.searchParams.set('condominio',slugify(name));return u.toString()}
+function publicBaseUrl(){
+  const detected=detectGithub();
+  if(detected){const parts=location.pathname.split('/').filter(Boolean);const basePath=detected.repo===detected.owner+'.github.io'?'/':`/${detected.repo}/`;return `${location.protocol}//${location.host}${basePath}`}
+  const owner=(state.github?.owner||'').trim(),repo=(state.github?.repo||'').trim();
+  if(owner&&repo){const basePath=repo===owner+'.github.io'?'/':`/${encodeURIComponent(repo)}/`;return `https://${owner}.github.io${basePath}`}
+  const u=new URL(location.href);u.search='';u.hash='';return u.toString();
+}
+function publicUrlForCondo(name){const u=new URL(publicBaseUrl());u.searchParams.set('condominio',slugify(name));return u.toString()}
 async function sha256(text){const buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text));return [...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,'0')).join('')}
 function detectGithub(){if(!location.hostname.endsWith('.github.io'))return null;const owner=location.hostname.split('.')[0];const parts=location.pathname.split('/').filter(Boolean);const repo=parts[0]||owner+'.github.io';return {owner,repo}}
 
@@ -397,9 +405,29 @@ async function resolveImage(ref){if(!ref)return'';const id=imageId(ref);if(!id)r
 function revokeUrl(which){if(which==='public'&&currentPublicUrl){URL.revokeObjectURL(currentPublicUrl);currentPublicUrl=null}if(which==='editor'&&currentEditorUrl){URL.revokeObjectURL(currentEditorUrl);currentEditorUrl=null}}
 
 function renderCondoSelects(){const publicSelect=$('condoSelect'),adminSelect=$('adminCondo');if(lockedCondo){publicSelect.innerHTML=`<option value="${esc(lockedCondo)}">${esc(lockedCondo)}</option>`;publicSelect.value=lockedCondo;publicSelect.hidden=true;$('lockedCondoName').hidden=false;$('lockedCondoName').textContent=lockedCondo;if(adminSelect){adminSelect.innerHTML=''}}else{const names=Object.keys(state.condos);for(const el of [publicSelect,adminSelect]){if(!el)continue;const old=el.value;el.innerHTML=names.map(n=>`<option value="${esc(n)}">${esc(n)}</option>`).join('');if(state.condos[old])el.value=old}publicSelect.hidden=false;$('lockedCondoName').hidden=true;$('lockedCondoName').textContent=''}$('condoPill').textContent=condo()}
-function renderTopics(){let count=0;$('topicGrid').innerHTML=Object.entries(state.features).filter(([k])=>enabled(k)).map(([k,f])=>{count++;return `<button class="topic" type="button" data-key="${esc(k)}"><div class="topic-icon">${esc(f.icon)}</div><b>${esc(f.label)}</b><span>${esc(f.desc)}</span></button>`}).join('');$('enabledCount').textContent=`${count} opções`;$('condoPill').textContent=condo();document.querySelectorAll('.topic').forEach(b=>b.addEventListener('click',()=>startTutorial(b.dataset.key)))}
+function renderTopics(){
+  const enabledItems=Object.entries(state.features).filter(([k])=>enabled(k));
+  let principal=enabledItems.filter(([,f])=>f.featured!==false).slice(0,8);
+  if(!principal.length)principal=enabledItems.slice(0,8);
+  $('topicGrid').innerHTML=principal.map(([k,f])=>`<button class="topic" type="button" data-key="${esc(k)}"><div class="topic-icon">${esc(f.icon)}</div><b>${esc(f.label)}</b><span>${esc(f.desc)}</span></button>`).join('');
+  $('enabledCount').textContent=`${principal.length} principais`;
+  $('condoPill').textContent=condo();
+  document.querySelectorAll('.topic').forEach(b=>b.addEventListener('click',()=>startTutorial(b.dataset.key)));
+}
 
-function showWelcome(){revokeUrl('public');currentTutorial=null;stepIndex=0;const items=Object.entries(state.features).filter(([k])=>enabled(k));$('stepImage').hidden=true;$('spot').hidden=true;$('publicEmpty').hidden=false;$('publicEmpty').className='welcome-screen';$('publicEmpty').innerHTML=`<h4>O que você pode fazer no F&F Access</h4><p>Escolha uma opção acima ou faça uma pergunta. Neste condomínio você pode:</p><div class="welcome-list">${items.slice(0,8).map(([k,f])=>`<div class="welcome-item"><span class="wi">${esc(f.icon)}</span><span><b>${esc(f.label)}</b><small>${esc(f.desc)}</small></span></div>`).join('')}</div>`;$('tutorialTitle').textContent='Conheça as opções disponíveis';$('tutorialSub').textContent=lockedCondo?`Recursos disponíveis para ${lockedCondo}`:`Recursos do condomínio selecionado`;$('counter').textContent='VISÃO GERAL';$('stepTitle').textContent='Como o aplicativo pode ajudar você';$('stepText').textContent=items.length?`Você tem ${items.length} opções disponíveis. Toque em uma delas para ver o passo a passo ilustrado.`:'Nenhuma opção está habilitada para este condomínio.';$('progressBar').style.width='0%';$('prevBtn').disabled=true;$('nextBtn').disabled=true;$('nextBtn').textContent='Escolha uma opção'}
+function showWelcome(){
+  revokeUrl('public');currentTutorial=null;stepIndex=0;
+  const items=Object.entries(state.features).filter(([k])=>enabled(k));
+  const principal=items.filter(([,f])=>f.featured!==false).slice(0,8);
+  $('stepImage').hidden=true;$('spot').hidden=true;$('publicEmpty').hidden=false;$('publicEmpty').className='welcome-screen';
+  $('publicEmpty').innerHTML=`<h4>Encontre o passo a passo que precisa</h4><p>Use a busca acima para pesquisar entre todos os ${items.length} tutoriais disponíveis ou escolha um dos ${principal.length||Math.min(items.length,8)} acessos principais.</p>`;
+  $('tutorialTitle').textContent='Central de tutoriais';
+  $('tutorialSub').textContent=lockedCondo?`Conteúdo disponível para ${lockedCondo}`:'Conteúdo do condomínio selecionado';
+  $('counter').textContent='PRONTO PARA BUSCAR';
+  $('stepTitle').textContent='A tela inicial mostra somente os principais';
+  $('stepText').textContent=items.length?`Existem ${items.length} tutoriais habilitados. Os demais continuam acessíveis pela busca, sem poluir a página inicial.`:'Nenhum tutorial está habilitado para este condomínio.';
+  $('progressBar').style.width='0%';$('prevBtn').disabled=true;$('nextBtn').disabled=true;$('nextBtn').textContent='Pesquise acima';
+}
 
 
 function renderPublicLinks(){const box=$('publicLinks');if(!box)return;box.innerHTML=Object.keys(state.condos).map(name=>{const url=publicUrlForCondo(name);return `<div class="public-link-row"><input readonly value="${esc(url)}" aria-label="Link de ${esc(name)}"><button class="secondary copy-condo-link" type="button" data-name="${esc(name)}">Copiar</button><button class="secondary open-condo-link" type="button" data-name="${esc(name)}">Abrir</button></div>`}).join('');box.querySelectorAll('.copy-condo-link').forEach(b=>b.addEventListener('click',async()=>{const url=publicUrlForCondo(b.dataset.name);try{await navigator.clipboard.writeText(url);toast('Link copiado.')}catch{prompt('Copie o link:',url)}}));box.querySelectorAll('.open-condo-link').forEach(b=>b.addEventListener('click',()=>window.open(publicUrlForCondo(b.dataset.name),'_blank','noopener')))}
@@ -407,7 +435,32 @@ function showPublicEmpty(msg){revokeUrl('public');$('stepImage').hidden=true;$('
 function placePublicSpot(step){const sp=$('spot');if(!step||step.highlight===false){sp.hidden=true;return}const x=clamp(step.x),y=clamp(step.y),w=Math.max(1,Math.min(100-x,clamp(step.w,1,100))),h=Math.max(1,Math.min(100-y,clamp(step.h,1,100)));sp.style.left=x+'%';sp.style.top=y+'%';sp.style.width=w+'%';sp.style.height=h+'%';$('badge').textContent=stepIndex+1;sp.hidden=false}
 async function renderStep(){const t=state.tutorials[currentTutorial];if(!t?.steps?.length){showPublicEmpty('Este tutorial ainda não possui etapas.');return}stepIndex=Math.max(0,Math.min(stepIndex,t.steps.length-1));const s=t.steps[stepIndex];$('tutorialTitle').textContent=t.title||state.features[currentTutorial]?.label||'Tutorial';$('tutorialSub').textContent=lockedCondo?'Guia ilustrado passo a passo':`Guia ilustrado para ${condo()}`;$('counter').textContent=`PASSO ${stepIndex+1} DE ${t.steps.length}`;$('stepTitle').textContent=s.title||`Etapa ${stepIndex+1}`;$('stepText').textContent=s.text||'Siga a área destacada na imagem.';$('prevBtn').disabled=stepIndex===0;$('nextBtn').disabled=false;$('nextBtn').textContent=stepIndex===t.steps.length-1?'Concluir ✓':'Próximo →';$('progressBar').style.width=((stepIndex+1)/t.steps.length*100)+'%';if(!s.img){showPublicEmpty('Esta etapa ainda não possui um print.');return}revokeUrl('public');const src=await resolveImage(s.img);if(!src){showPublicEmpty('O print desta etapa não foi encontrado. Abra o Administrador e envie a imagem novamente.');return}if(imageId(s.img))currentPublicUrl=src;const img=$('stepImage');$('publicEmpty').className='empty-screen';$('publicEmpty').hidden=true;$('spot').hidden=true;img.hidden=false;img.onload=()=>requestAnimationFrame(()=>placePublicSpot(s));img.onerror=()=>showPublicEmpty('Não foi possível carregar esta imagem.');img.src=src;if(img.complete&&img.naturalWidth)requestAnimationFrame(()=>placePublicSpot(s))}
 function startTutorial(k){if(!enabled(k)||!state.tutorials[k])return toast('Este tutorial não está disponível para este condomínio.');currentTutorial=k;stepIndex=0;renderStep();$('viewer').scrollIntoView({behavior:'smooth',block:'start'})}
-function ask(){const q=normalize($('question').value.trim());if(!q)return toast('Digite uma pergunta.');let best=null,score=0;for(const [k,t] of Object.entries(state.tutorials)){if(!enabled(k))continue;let s=0;for(const kw of t.keywords||[]){const n=normalize(kw);if(q.includes(n))s+=6;for(const w of n.split(' '))if(w.length>3&&q.includes(w))s++}for(const w of normalize(state.features[k]?.label).split(' '))if(w.length>3&&q.includes(w))s+=2;if(s>score){score=s;best=k}}if(best)startTutorial(best);else toast('Não encontrei esse tutorial. Tente outra forma de perguntar.')}
+const SEARCH_INTENTS=[
+  ['enviar',['enviar','envio','mandar','compartilhar']],
+  ['receber',['receber','recebido','chegar','recepcao']],
+  ['criar',['criar','gerar','novo','adicionar']],
+  ['cadastrar',['cadastrar','cadastro','registrar']],
+  ['editar',['editar','alterar','modificar','atualizar']],
+  ['excluir',['excluir','apagar','remover','deletar']],
+  ['consultar',['consultar','ver','visualizar','acessar','abrir']],
+  ['convidar',['convidar','convite']],
+  ['liberar',['liberar','autorizar','permitir']],
+  ['bloquear',['bloquear','bloqueio','negar']]
+];
+function intentSet(text){const n=' '+normalize(text)+' ';const out=new Set();for(const [intent,words] of SEARCH_INTENTS)if(words.some(w=>n.includes(' '+w+' ')))out.add(intent);return out}
+function tutorialSearchText(k,t){const f=state.features[k]||{};return [f.label,f.desc,t.title,...(t.keywords||[])].filter(Boolean).map(normalize)}
+function scoreTutorial(q,k,t){
+  const phrases=tutorialSearchText(k,t),qTokens=[...new Set(q.split(' ').filter(w=>w.length>2))];let score=0;
+  for(const p of phrases){if(!p)continue;if(p===q)score+=120;else{if(q.includes(p)&&p.length>3)score+=35;if(p.includes(q)&&q.length>3)score+=28}const pTokens=new Set(p.split(' ').filter(w=>w.length>2));for(const w of qTokens)if(pTokens.has(w))score+=w.length>=7?5:3}
+  const qi=intentSet(q),ci=intentSet(phrases.join(' '));if(qi.size){for(const intent of qi)score+=ci.has(intent)?30:-16}
+  return score;
+}
+function ask(){
+  const q=normalize($('question').value.trim());if(!q)return toast('Digite uma pergunta.');
+  const ranked=[];for(const [k,t] of Object.entries(state.tutorials)){if(!enabled(k))continue;ranked.push([scoreTutorial(q,k,t),k])}
+  ranked.sort((a,b)=>b[0]-a[0]);const [bestScore,best]=ranked[0]||[0,null];
+  if(best&&bestScore>=8)startTutorial(best);else toast('Não encontrei esse tutorial. Tente usar palavras como enviar, receber, cadastrar, editar ou excluir.');
+}
 
 $('askBtn').addEventListener('click',ask);$('question').addEventListener('keydown',e=>{if(e.key==='Enter')ask()});$('prevBtn').addEventListener('click',()=>{if(stepIndex>0){stepIndex--;renderStep()}});$('nextBtn').addEventListener('click',()=>{const t=state.tutorials[currentTutorial];if(!t)return;if(stepIndex<t.steps.length-1){stepIndex++;renderStep()}else toast('Passo a passo concluído!')});$('condoSelect').addEventListener('change',()=>{renderTopics();showWelcome()});
 
@@ -417,9 +470,9 @@ $('loginBtn').addEventListener('click',async()=>{const user=$('adminUser').value
 $('closeAdmin').addEventListener('click',()=>{$('adminOverlay').classList.remove('show');revokeUrl('editor')});
 document.querySelectorAll('.admin-tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.admin-tab').forEach(x=>x.classList.toggle('active',x===btn));document.querySelectorAll('.admin-pane').forEach(p=>p.classList.remove('active'));$('pane-'+btn.dataset.tab).classList.add('active');if(btn.dataset.tab==='editor')renderTutorialList()}));
 
-function renderAdminFeatures(){const c=$('adminCondo').value;$('featureList').innerHTML=Object.entries(state.features).map(([k,f])=>`<label class="feature"><input type="checkbox" data-key="${esc(k)}" ${enabled(k,c)?'checked':''}><div><b>${esc(f.icon)} ${esc(f.label)}</b><small>${esc(f.desc)}</small></div></label>`).join('')}
+function renderAdminFeatures(){const c=$('adminCondo').value;$('featureList').innerHTML=Object.entries(state.features).map(([k,f])=>`<div class="feature"><input type="checkbox" class="feature-enabled" data-key="${esc(k)}" ${enabled(k,c)?'checked':''}><div><b>${esc(f.icon)} ${esc(f.label)}</b><small>${esc(f.desc)}</small><label style="display:flex;align-items:center;gap:7px;margin-top:8px;font-size:12px;font-weight:800;color:#42506a"><input type="checkbox" class="feature-featured" data-key="${esc(k)}" ${f.featured!==false?'checked':''} style="width:17px;height:17px;margin:0"> Mostrar nos acessos rápidos</label></div></div>`).join('')}
 $('adminCondo').addEventListener('change',renderAdminFeatures);
-$('saveFeatures').addEventListener('click',async()=>{const c=$('adminCondo').value;document.querySelectorAll('#featureList input[type=checkbox]').forEach(ch=>state.condos[c][ch.dataset.key]=ch.checked);persist();$('condoSelect').value=c;renderTopics();showWelcome();await publishAll('Atualiza opções do condomínio')});
+$('saveFeatures').addEventListener('click',async()=>{const c=$('adminCondo').value;document.querySelectorAll('#featureList .feature-enabled').forEach(ch=>state.condos[c][ch.dataset.key]=ch.checked);document.querySelectorAll('#featureList .feature-featured').forEach(ch=>{if(state.features[ch.dataset.key])state.features[ch.dataset.key].featured=ch.checked});persist();$('condoSelect').value=c;renderTopics();showWelcome();await publishAll('Atualiza opções do condomínio')});
 $('addCondo').addEventListener('click',async()=>{const n=$('newCondo').value.trim();if(!n)return toast('Digite o nome do condomínio.');if(state.condos[n])return toast('Esse condomínio já existe.');const slug=slugify(n);if(Object.keys(state.condos).some(c=>slugify(c)===slug))return toast('Já existe um condomínio com um nome muito parecido. Use um nome diferente.');state.condos[n]={};Object.keys(state.features).forEach(k=>state.condos[n][k]=true);persist();renderCondoSelects();$('adminCondo').value=n;renderAdminFeatures();$('newCondo').value='';renderPublicLinks();await publishAll('Adiciona condomínio '+n)});
 $('changeAdmin').addEventListener('click',async()=>{const u=$('newAdminUser').value.trim(),p=$('newAdminPass').value;if(!u||p.length<4)return toast('Informe usuário e senha com pelo menos 4 caracteres.');state.admin={user:u,passHash:await sha256(p)};persist();$('adminUser').value=u;$('newAdminUser').value='';$('newAdminPass').value='';await publishAll('Atualiza credencial administrativa')});
 
@@ -432,7 +485,7 @@ async function loadStepForm(){const s=state.tutorials[editKey]?.steps?.[editStep
 function saveStepFields(){const s=state.tutorials[editKey]?.steps?.[editStep];if(!s)return;s.title=$('stTitle').value.trim();s.text=$('stText').value.trim();for(const [id,k] of [['cx','x'],['cy','y'],['cw','w'],['ch','h']]){const v=parseFloat($(id).value);if(Number.isFinite(v))s[k]=clamp(v)}}
 async function saveTutorialFields(){if(!editKey)return;const label=$('edLabel').value.trim();if(!label)return toast('Informe o nome do menu.');state.features[editKey].label=label;state.features[editKey].icon=$('edIcon').value.trim()||'📌';state.features[editKey].desc=$('edDesc').value.trim();state.tutorials[editKey].title=$('edTitle').value.trim()||('Como usar '+label+'?');state.tutorials[editKey].keywords=$('edKeywords').value.split(',').map(x=>x.trim()).filter(Boolean);saveStepFields();persist();renderTopics();renderAdminFeatures();renderTutorialList();await publishAll('Atualiza tutorial')}
 $('saveTutorial').addEventListener('click',saveTutorialFields);
-$('newTutorial').addEventListener('click',()=>{saveStepFields();const key='menu_'+Date.now();state.features[key]={icon:'📌',label:'Novo menu',desc:'Nova função do sistema.'};state.tutorials[key]={title:'Como usar este menu?',keywords:['novo menu'],steps:[]};for(const c of Object.keys(state.condos))state.condos[c][key]=(c===$('adminCondo').value);editKey=key;editStep=0;persist();renderTutorialList();renderAdminFeatures();toast('Novo menu criado. Adicione as etapas e os prints.')});
+$('newTutorial').addEventListener('click',()=>{saveStepFields();const key='menu_'+Date.now();state.features[key]={icon:'📌',label:'Novo menu',desc:'Nova função do sistema.',featured:false};state.tutorials[key]={title:'Como usar este menu?',keywords:['novo menu'],steps:[]};for(const c of Object.keys(state.condos))state.condos[c][key]=(c===$('adminCondo').value);editKey=key;editStep=0;persist();renderTutorialList();renderAdminFeatures();toast('Novo menu criado. Adicione as etapas e os prints.')});
 $('deleteTutorial').addEventListener('click',async()=>{if(!editKey||!confirm('Excluir este menu e todas as etapas?'))return;for(const s of state.tutorials[editKey]?.steps||[]){const id=imageId(s.img);if(id)await imageDelete(id)}delete state.features[editKey];delete state.tutorials[editKey];for(const c of Object.keys(state.condos))delete state.condos[c][editKey];editKey=null;persist();renderTutorialList();renderAdminFeatures();renderTopics();await publishAll('Exclui menu do manual')});
 $('addStep').addEventListener('click',()=>{if(!editKey)return;saveStepFields();state.tutorials[editKey].steps.push({img:'',x:10,y:10,w:30,h:10,highlight:true,title:'Nova etapa',text:'Descreva o que o usuário deve fazer.'});editStep=state.tutorials[editKey].steps.length-1;persist();renderStepList();loadStepForm()});
 $('deleteStep').addEventListener('click',async()=>{const a=state.tutorials[editKey]?.steps;if(!a?.length||!confirm('Excluir esta etapa?'))return;const old=a[editStep];const id=imageId(old?.img);if(id)await imageDelete(id);a.splice(editStep,1);editStep=Math.max(0,Math.min(editStep,a.length-1));persist();renderStepList();loadStepForm();toast('Etapa excluída.')});

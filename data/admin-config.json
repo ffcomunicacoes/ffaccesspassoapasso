@@ -755,7 +755,9 @@
         "E-mail",
         "convite",
         "finalizar cadastro",
-        "receber o convite."
+        "receber o convite",
+        "Ver convite",
+        "ver o link."
       ],
       "steps": [
         {
@@ -885,6 +887,6 @@
     "folder": "assets"
   },
   "meta": {
-    "updatedAt": 1791034216325
+    "updatedAt": 1791034742569
   }
 }

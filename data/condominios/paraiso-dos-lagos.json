@@ -1,47 +1,55 @@
 {
   "version": 1,
-  "updatedAt": 1791037354974,
+  "updatedAt": 1791039619349,
   "condominio": "Paraíso dos Lagos",
   "features": {
     "moradores": {
       "icon": "👥",
       "label": "Editar moradores",
-      "desc": "Consultar moradores vinculados à unidade."
+      "desc": "Consultar moradores vinculados à unidade.",
+      "featured": true
     },
     "convidar": {
       "icon": "✉️",
       "label": "Convidar morador",
-      "desc": "Enviar convite para criação de conta."
+      "desc": "Enviar convite para criação de conta.",
+      "featured": true
     },
     "facial": {
       "icon": "🙂",
       "label": "Reconhecimento facial",
-      "desc": "Criar convite com reconhecimento facial."
+      "desc": "Criar convite com reconhecimento facial.",
+      "featured": true
     },
     "qrscanner": {
       "icon": "▣",
       "label": "QR Scanner",
-      "desc": "Acesso do convidado via leitura de QR."
+      "desc": "Acesso do convidado via leitura de QR.",
+      "featured": true
     },
     "qrcode": {
       "icon": "▦",
       "label": "QR Code",
-      "desc": "Criar acesso usando QR Code."
+      "desc": "Criar acesso usando QR Code.",
+      "featured": true
     },
     "listaportaria": {
       "icon": "☷",
       "label": "Avisar portaria",
-      "desc": "Criar lista de visitantes para a portaria."
+      "desc": "Criar lista de visitantes para a portaria.",
+      "featured": true
     },
     "veiculos": {
       "icon": "🚗",
       "label": "Veículos",
-      "desc": "Gerenciar veículos da unidade."
+      "desc": "Gerenciar veículos da unidade.",
+      "featured": false
     },
     "documentos": {
       "icon": "📁",
       "label": "Documentos da unidade",
-      "desc": "Consultar documentos vinculados à unidade."
+      "desc": "Consultar documentos vinculados à unidade.",
+      "featured": false
     }
   },
   "tutorials": {

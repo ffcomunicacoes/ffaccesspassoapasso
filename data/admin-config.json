@@ -847,7 +847,7 @@
       "prestadores": true,
       "documentos": true,
       "menu_1790974025392": true,
-      "menu_1791030014353": false
+      "menu_1791030014353": true
     },
     "Paraíso dos Lagos": {
       "moradores": true,
@@ -887,6 +887,6 @@
     "folder": "assets"
   },
   "meta": {
-    "updatedAt": 1791034893224
+    "updatedAt": 1791037207694
   }
 }

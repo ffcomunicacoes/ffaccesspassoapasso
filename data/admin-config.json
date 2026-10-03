@@ -192,7 +192,10 @@
       "keywords": [
         "convidar morador",
         "convite morador",
-        "criar conta"
+        "criar conta",
+        "Link",
+        "enviar convite",
+        "enviar link"
       ],
       "steps": [
         {
@@ -770,6 +773,20 @@
       "prestadores": false,
       "documentos": true,
       "menu_1790974025392": false
+    },
+    "Paraiso": {
+      "moradores": true,
+      "cadastrar": true,
+      "convidar": true,
+      "facial": true,
+      "qrscanner": true,
+      "chave": true,
+      "qrcode": true,
+      "listaportaria": true,
+      "veiculos": true,
+      "prestadores": true,
+      "documentos": true,
+      "menu_1790974025392": true
     }
   },
   "github": {
@@ -779,6 +796,6 @@
     "folder": "assets"
   },
   "meta": {
-    "updatedAt": 1790980401436
+    "updatedAt": 1791027670497
   }
 }

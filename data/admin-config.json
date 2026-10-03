@@ -198,7 +198,7 @@
         "convidar morador",
         "convite morador",
         "criar conta",
-        "Link",
+        "Mandar o link",
         "enviar convite",
         "enviar link"
       ],
@@ -887,6 +887,6 @@
     "folder": "assets"
   },
   "meta": {
-    "updatedAt": 1791037207694
+    "updatedAt": 1791037354974
   }
 }

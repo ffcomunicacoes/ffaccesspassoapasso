@@ -1,72 +1,91 @@
 {
   "version": 1,
-  "updatedAt": 1791037354974,
+  "updatedAt": 1791039619349,
   "condominio": "Showroom F&F Comunicações",
   "features": {
     "moradores": {
       "icon": "👥",
       "label": "Editar moradores",
-      "desc": "Consultar moradores vinculados à unidade."
+      "desc": "Consultar moradores vinculados à unidade.",
+      "featured": true
     },
     "cadastrar": {
       "icon": "➕",
       "label": "Cadastrar morador",
-      "desc": "Adicionar um novo morador na unidade."
+      "desc": "Adicionar um novo morador na unidade.",
+      "featured": true
     },
     "convidar": {
       "icon": "✉️",
       "label": "Convidar morador",
-      "desc": "Enviar convite para criação de conta."
+      "desc": "Enviar convite para criação de conta.",
+      "featured": true
     },
     "facial": {
       "icon": "🙂",
       "label": "Reconhecimento facial",
-      "desc": "Criar convite com reconhecimento facial."
+      "desc": "Criar convite com reconhecimento facial.",
+      "featured": true
     },
     "qrscanner": {
       "icon": "▣",
       "label": "QR Scanner",
-      "desc": "Acesso do convidado via leitura de QR."
+      "desc": "Acesso do convidado via leitura de QR.",
+      "featured": true
     },
     "chave": {
       "icon": "🔑",
       "label": "Chave virtual",
-      "desc": "Acesso temporário por chave virtual."
+      "desc": "Acesso temporário por chave virtual.",
+      "featured": true
     },
     "qrcode": {
       "icon": "▦",
       "label": "QR Code",
-      "desc": "Criar acesso usando QR Code."
+      "desc": "Criar acesso usando QR Code.",
+      "featured": true
     },
     "listaportaria": {
       "icon": "☷",
       "label": "Avisar portaria",
-      "desc": "Criar lista de visitantes para a portaria."
+      "desc": "Criar lista de visitantes para a portaria.",
+      "featured": true
     },
     "veiculos": {
       "icon": "🚗",
       "label": "Veículos",
-      "desc": "Gerenciar veículos da unidade."
+      "desc": "Gerenciar veículos da unidade.",
+      "featured": false
     },
     "prestadores": {
       "icon": "🔧",
       "label": "Prestadores e funcionários",
-      "desc": "Gerenciar prestadores e funcionários."
+      "desc": "Gerenciar prestadores e funcionários.",
+      "featured": false
     },
     "documentos": {
       "icon": "📁",
       "label": "Documentos da unidade",
-      "desc": "Consultar documentos vinculados à unidade."
+      "desc": "Consultar documentos vinculados à unidade.",
+      "featured": false
     },
     "menu_1790974025392": {
       "icon": "🫂",
       "label": "Cadastro de visitantes",
-      "desc": "Nova função do sistema."
+      "desc": "Nova função do sistema.",
+      "featured": false
     },
     "menu_1791030014353": {
       "icon": "📩",
       "label": "Como verificar e cadastrar pelo E-mail.",
-      "desc": "Como finalizar o cadastro pelo e-mail."
+      "desc": "Como finalizar o cadastro pelo e-mail.",
+      "featured": false
+    },
+    "menu_1791038675916": {
+      "icon": "❌",
+      "label": "Remover Morador",
+      "desc": "Esse passo a passo explica como remover um cadastro de morador.",
+      "featured": false
     }
   },
   "tutorials": {
@@ -828,6 +847,67 @@
           "highlight": true,
           "title": "Opção para iphone.",
           "text": "Essa opção exclusivo para pessoa que possuem o sistema IOS."
+        }
+      ]
+    },
+    "menu_1791038675916": {
+      "title": "Como apagar o cadastro de um morador.",
+      "keywords": [
+        "Remover cadastro",
+        "apagar morador",
+        "excluir morador",
+        "deletar morador."
+      ],
+      "steps": [
+        {
+          "img": "assets/CADASTRO MORADOR 1.jpeg",
+          "x": 3.2,
+          "y": 55.2,
+          "w": 45.9,
+          "h": 10.8,
+          "highlight": true,
+          "title": "Clique em \"Cadastro\"",
+          "text": "Clique em \"Cadastro\", para verificar as opções de cadastro."
+        },
+        {
+          "img": "assets/CADASTRO MORADOR 2.jpeg",
+          "x": 2.2,
+          "y": 13.8,
+          "w": 49,
+          "h": 14.7,
+          "highlight": true,
+          "title": "Clique em \"Moradores\"",
+          "text": "No canto superior esquerdo, clique na menu de moradores para esta verificar os cadastros."
+        },
+        {
+          "img": "assets/Excluir Morador 1.jpeg",
+          "x": 2.5,
+          "y": 11.9,
+          "w": 97.5,
+          "h": 12,
+          "highlight": true,
+          "title": "Clique no Morador",
+          "text": "Selecione o morador que deseja deletar."
+        },
+        {
+          "img": "assets/Excluir Morador 2.jpeg",
+          "x": 52.5,
+          "y": 22.8,
+          "w": 40.5,
+          "h": 7.1,
+          "highlight": true,
+          "title": "Clique no botão \"excluir\"",
+          "text": "Após conferir o cadastro, clique em excluir. Para assim deletar o cadastro."
+        },
+        {
+          "img": "assets/Excluir Morador 3.jpeg",
+          "x": 1.9,
+          "y": 80,
+          "w": 97,
+          "h": 7.6,
+          "highlight": true,
+          "title": "Clique em na confirmação.",
+          "text": "Clique em \"Sim, escluir!\", para confirmar a exclusão."
         }
       ]
     }

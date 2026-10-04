@@ -127,6 +127,36 @@
           "highlight": true,
           "title": "Lista de Moradores",
           "text": "Todos os cadastros de Moradores que estão finalizados ira aparecer nessa lista, clicando no cadastro é possivel editar."
+        },
+        {
+          "img": "assets/Excluir Morador 2.jpeg",
+          "x": 7.3,
+          "y": 23.1,
+          "w": 41.6,
+          "h": 7,
+          "highlight": true,
+          "title": "Clique em \"Editar\"",
+          "text": "C"
+        },
+        {
+          "img": "assets/Edit Morador.jpeg",
+          "x": 2.5,
+          "y": 14.7,
+          "w": 96.6,
+          "h": 80.4,
+          "highlight": true,
+          "title": "Altere a informação necessária.",
+          "text": "Verifique a opção de queseja"
+        },
+        {
+          "img": "assets/Edit Morador.jpeg",
+          "x": 76.9,
+          "y": 6.1,
+          "w": 22,
+          "h": 8.2,
+          "highlight": true,
+          "title": "Clique em \"salvar\"",
+          "text": "Clique em salvar para confirmar as informações."
         }
       ]
     },
@@ -970,6 +1000,6 @@
     "folder": "assets"
   },
   "meta": {
-    "updatedAt": 1791039619349
+    "updatedAt": 1791119922953
   }
 }
